@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # vimgolf
-VGOLF="$DOK/Linux/Vim/vimgolf"
+VGOLF="./"
 
 select_challenge() {
 
