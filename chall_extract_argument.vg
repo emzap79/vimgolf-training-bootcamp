@@ -1,0 +1,10 @@
+Start file
+
+attr("y",function(v){return v})
+
+End file
+
+f=function(v){return v};
+attr("y",f)
+
+vimgolf put 536cfa23fcccd100025678bd

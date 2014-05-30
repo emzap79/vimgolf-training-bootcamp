@@ -1,0 +1,272 @@
+# vim: syntax=on:fdm=marker:rnu
+----------------------------
+-  Abusing Macros: Part 1  -
+----------------------------
+# {{{
+
+Abusing macros part 1
+http://www.reddit.com/r/vimgolf/comments/wmtep/abusing_macros_part_1_normal/
+
+First post. Hopefully I'll expand to other types of macros and Vim features in
+other posts. I'll start with :normal, because 1) it's so different from the
+other ways of doing macros, and 2) no one other than me, to date, has ever used
+it right.
+
+**Overhead**
+
+From normal mode, the standard way to write a :normal that acts on every line
+is :%no<S-Tab> with <CR> at the end. That's six strokes of basically mandatory
+overhead. Compare to qqq9@q for a single-digit recorded macro repeat, which is
+also six, or 9@=""<CR> at six for a single-digit expression register macro.
+
+**The Range**
+
+Usually, you'll use % as your range, to run the macro on every line. The great
+thing about % is you can run your macro on 10s or 100s of lines without having
+to type extra digits, which might save you strokes compared to other macros.
+You might use 9:normal for a repeat starting at the current line, but that's
+rare. Using a multi-stroke range, like 10:normal or :1,normal, is possible but
+probably wastes too many strokes.
+
+:normal without a range runs once from the cursor position. But that's
+pointless. With a range, it starts on every line in turn from column 1, where
+0, |, or _ would take you, before the indent.
+
+Say you used % as a range and your :normal adds lines. How many times does it
+run? As many times as there were lines in the file before. Say you had a file:
+
+	foo
+	bar
+	baz
+
+and you run :%no<S-Tab> Yp<CR> Your file is now:
+
+	foo
+	foo
+	foo
+	foo
+	bar
+	baz
+
+After doing line 1, % moved on to line 2, which is now the same as line 1. It
+ran for every line number that used to be in the file.
+
+What if you used 4:normal instead? There is no line 4. That's an illegal range.
+There's no way to repeat :normal more times than lines in the file.
+
+Most of the time, moving onto the next line is like a free + at the end of your
+macro. That's pretty sweet. But if you're moving around the file, it'll still
+bring you to the line after the one you started on, and that can be even
+better.
+
+**The Space**
+
+In that Yp example, I had to use a space after :normal. That's because there's
+no such thing as a :normalYp command. But like other : commands, if your
+argument starts with a digit, punctuation, or even a control character, you can
+skip the space. If you can rearrange the macro to avoid a letter, a space, or a
+control character that triggers completion at the front, you can avoid the
+extra stroke of overhead.
+
+**Escape**
+
+In a regular macro, if you end in insert mode, you end in insert mode. With
+:normal, you get automatically escaped out, saving a stroke. If you need an
+escape in the middle of the command line, you have to use <C-V> to escape the
+escape. So try to move your inserting to the end.
+
+**Special strokes**
+
+Some control characters work without <C-V>. Notably, <C-X> works anywhere, but
+<C-A> triggers a useless completion at the beginning, but works fine anywhere
+else. Maybe you can get some leverage out of <C-O> if you're jumping around, or
+if you need a quick command in insert mode without using <C-V><Esc>.
+
+<CR> is a special case. It would obviously run your command if you typed it
+directly, but <C-@> fills in and behaves like <CR> in every mode. So you can
+run other : commands or searches with no extra overhead.
+
+Arrow keys just don't work.
+
+**Filters**
+
+This is really powerful. With you run a regular macro and hit an error, it just
+stops. Doesn't finish, doesn't run again. When :normal hits an error, it stops
+running for that line and moves onto the next. This means you can run commands
+only on lines that fit a pattern. For example, if you use <C-A> or <C-X> and
+there are no digits in the rest of the line, the rest of your commands are
+skipped, so they only run on lines with digits. Also works great with f and t.
+
+**ex mode**
+
+There are some differences if you've Q'ed into ex mode. :normal still runs
+fine, but there's no completion, so you have to write Qnorm instead of
+:no<S-Tab> for one extra stroke. Most control characters work better here, like
+<C-A> at the beginning of the line, <Esc>, or <C-R>. Notably though, <C-@> no
+longer enters anything, so you can't use it as a replacement for <CR>. You'll
+have to use <C-V><CR>.
+
+**Summary**
+
+Consider :normal if:
+
+
+* your macro needs to run once a line, and you want to skip the + at the end
+* your macro skips around, and you want to come back to the line after you
+started without a jump or a mark
+* you can avoid a letter or space at the start, and therefore skip the space after :normal
+* you can make just one trip to insert mode, and it can go at the end, to avoid the <Esc>
+* you need a filter, so your commands only run on lines that fit a basic pattern
+* you don't need any arrow keys, and have no/limited need for control characters that have functions on the command line
+
+Alle 4 Kommentaresubscribe
+
+[–][deleted] 2 Punkte 1 Jahr zuvor (2|0)
+
+Nice writeup.
+
+Does :no work on your setup? I can't go beyond :norm because :no and :nor are interpreted as :noremap.
+
+
+[–]udioica [S] 1 Punkt 1 Jahr zuvor (1|0)
+
+Thanks for the compliment.
+
+If you read the help file, :normal is listed as :norm[al]. That notation is used for all the colon commands. The letters in brackets are the ones that can be "officially" skipped. In practice, you can use <Tab> and <S-Tab> to complete a command, sometimes saving strokes. The quickest way to write :normal is :no<S-Tab>, which is a stroke faster than :norm. <S-Tab> doesn't work on every terminal, e.g. I have to detach screen to use it.
+
+However, command completion doesn't work in ex mode or in a macro. In those cases, you have to write out :norm.
+
+
+[–][deleted] 1 Punkt 1 Jahr zuvor (1|0)
+
+OK. I forgot for a second that your post was to be read in the context of vimgolf.
+
+I've used <S-Tab> many times when in the menu but I never thought about invoking that way. Cunning move.
+
+
+[–]udioica [S] 1 Punkt 1 Jahr zuvor (1|0)
+
+Just an addendum, in case you want to see :normal in use. There are (currently)
+six challenges where, as far as I can tell, this is the only way to drop the
+final strokes. I'll spoiler tag them, in case you want to find out for
+yourself.
+
+    Table Reshuffle[1]
+    http://vimgolf.com/challenges/4d1bfa8fb2c3e06468000127
+    ./chall_table_reshuffle.vg
+
+    Reformat most common surnames[2]
+    http://vimgolf.com/challenges/4d1a790fb8cb3409320001a8
+
+    Java Array2List[3]
+    http://vimgolf.com/challenges/4d665abd7d73e02a55000009
+    # Align it, win it.[4]
+    Prime Numbers[5]
+    http://vimgolf.com/challenges/4d1c27940e3d7832db000010
+    Convert pandoc unordered list to a numbered list[6]
+    http://vimgolf.com/challenges/500855e60599d90002000073
+
+# }}}
+----------------------------
+-  Abusing Macros: Part 2  -
+----------------------------
+# {{{
+Abusing macros part 2
+http://www.reddit.com/r/vimgolf/comments/x049u/abusing_macros_part_2_the_macro/
+
+
+Recursively Palindrome
+######################
+
+# ./chall_recursively_palindrome.vg
+# vimgolf put 4d6f45b938c0aa691b000003
+# http://vimgolf.com/challenges/4d6f45b938c0aa691b000003
+
+# Cabcdef<Home>ld^Plp<Esc>u5@.ZZ [23]
+# Lesson 1: You can use arrow keys/Home/End to stop writing the ". register
+# without actually escaping. You can confirm this by hitting C-A before and
+# after. This is not only good for "copy-pasting" text to use later in the edit;
+# it also lets you "piggy-back" off a previous edit when preparing a @. macro,
+# essentially compressing <Esc>i into one stroke. Note also that undo recognized
+# 2 different edits, and only undid the 2nd.  Lesson 2: Note how the piggy-back
+# stroke (Home this time) also removes the need for ^ after adding the letters.
+# Not only did Home stop writing ". so it can be rewritten, but it also let me
+# skip an extra cursor movement.
+
+
+
+Solve the Sokoban
+#################
+
+# ./chall_solve_the_sobokan.vg
+# vimgolf put 4d2061daf1a3f252f4000087
+# http://vimgolf.com/challenges/4d2061daf1a3f252f4000087#4ff64184499226000100001f
+
+# jlR@|><Down>?[0^?]<CR>r.<Esc>u*22@.ZZ The ideas here are basically the same as
+# last time. Use an arrow key to both piggy-back off an earlier insert, and bring
+# the cursor closer to where it needs to go. This solution does a good job of
+# showing how undo handles the split edit -- the cursor went back to the
+# beginning of the 2nd half, after the Down.
+
+
+Happy New Year!
+###############
+
+# ./chall_happy_new_year.vg
+# vimgolf put 4d247aa50947c63e260000a4
+# http://vimgolf.com/challenges/4d247aa50947c63e260000a4
+
+# igal<Esc>:redi@"<CR>16@.pdjZZ For one thing, this doesn't make you deal with
+# "recording". But there's a bigger lesson here: Lesson 3: If you can write your
+# junk text in a spot that'll get deleted anyway, you don't need to undo it.
+
+Compile C
+#########
+
+# ./chall_compile_c
+# vimgolf put 4d1c6d0535b40650b800017e
+# http://vimgolf.com/challenges/4d1c6d0535b40650b800017e
+
+# 9wcf"Vp$xYk<Esc>G13@.ZZ This takes advantage of the fact that input and output
+# have the same number of lines. It also skips undo, since the junk text will get
+# overwritten anyway. But there's a new trick here: Lesson 4: If you need a d
+# command and a @. macro, piggy back it into a c command to save a stroke.
+
+Deleting folded text
+####################
+
+./chall_deleting_folded_text.vg
+vimgolf put 4d1a87fcb8cb340932000290
+http://vimgolf.com/challenges/4d1a87fcb8cb340932000290
+
+oaoeu<Home>zjx@.<C-U><C-@>@.ZZ This time the macro is removed with C-U, which
+is normally problematic (moves your buffer around), but we can't end the edit
+at that point without losing the option of C-@. Run :di after the whole insert,
+and you'll see there's junk at the end of ". But: Lesson 5: In a recursive
+macro, nothing after the recursive call can ever run.
+
+Reverse Simple Deletion and Generate English Alphabets
+######################################################
+
+There are a lot of 12-stroke answers for a good reason. There's really only one
+clear way to do it. Even if you've read all the solutions above, it's not
+obvious how to convert the macro to @. It's impossible to escape out of insert
+mode inside a @. macro. If you use C-V or a C-K digraph, then run :di, you'll
+see your Esc, C-C, or C-@ get escaped by a C-V in the ". register. If you copy
+a literal Esc elsewhere in the file and try using <C-R>" you exit insert mode.
+If you get clever and try <C-R><C-R>" the register gets a C-V again. And in
+this challenge, you need to enter and exit insert mode 25 times.
+a.<BS><CR><Esc>24@.ZZ I got around that limitation by using . in my @. macro.
+The . repeats the initial insert, thereby "embedding" a complete insert, with a
+"virtual escape", in the ". register. BS "cancels" the . during the insert, and
+also cancels the CR in the macro, because since you're guaranteed to be at the
+beginning of the line, BS moves the cursor to the previous line. If CR was run
+from the last line, the macro would fail.  Lesson 6?: I just don't know. I'm
+still stunned that this actually works. I don't know how anything remotely
+similar could do anything useful.  Conclusion I hope you find some applications
+in challenges I missed. Maybe one will pop up in the future. I also hope you
+don't find any applications in real life.  Lesson 7: Couldn't resist. There's
+another trick I have that I've never managed to use. If you need to add a blank
+line AND define a @. macro, try omacrohere<Esc>U
+
+# }}}

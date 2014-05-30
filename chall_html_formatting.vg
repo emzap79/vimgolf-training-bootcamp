@@ -1,0 +1,36 @@
+Start file
+
+<table>
+<thead>
+<th>
+<th id="first_name">First Name</th>
+<th id="last_name">Last Name</th>
+<th id="address">Address</th>
+<th id="city">City</th>
+<th id="state">State</th>
+<th id="zip_postal">Zip</th>
+<th id="country">Country</th>
+<th id="phone">Phone</th>
+</th>
+</thead>
+</table>
+
+End file
+
+<table>
+        <thead>
+                <th>
+                <th id="first_name"> First Name</th>
+                <th id="last_name "> Last Name </th>
+                <th id="address   "> Address   </th>
+                <th id="city      "> City      </th>
+                <th id="state     "> State     </th>
+                <th id="zip_postal"> Zip       </th>
+                <th id="country   "> Country   </th>
+                <th id="phone     "> Phone     </th>
+                </th>
+        </thead>
+</table>
+
+===
+vimgolf put 537a553282aa3e000222048a
