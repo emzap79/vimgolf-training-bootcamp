@@ -15,9 +15,11 @@ It's simple enough, I give you a gothrough anyways.
 
 2. `cd` into it,
 
-3. copy challenge from vimgolf.com and save it as *chall_< name_of_chall >.vg* into directory,
+3. copy text from vimgolf.com and save it as *chall_< name_of_chall >.vg*
+   into directory. Be aware to copy the entire challenge (as long as it
+   contains "start file" and "end file", you're save!).
 
-4. make this script executable `chmod +x ./vimGolf.sh` ...
+4. Make this script executable `chmod +x ./vimGolf.sh`, then ...
 
 5. start playing and save some keystrokes :bowtie:
 

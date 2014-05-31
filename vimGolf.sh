@@ -21,7 +21,7 @@ select_challenge() {
                     echo "wrong selection, please try again!"
                 else
                     echo "you picked challenge: ${chall#chall_}"
-                    cp $VGOLF/$chall /tmp/foo.golf
+                    cat $VGOLF/$chall | sed '/^start\ file/I,/^end\ file/I!d' | egrep -iv '(^start|^end|^$)' > /tmp/foo.golf
                     break
                 fi
                 ;;
@@ -64,6 +64,7 @@ chall_play() {
         keystrokes=$(cat ~/.vim-last-scriptout | wc -c)
         vim -u ~/.vim/vimrc_vimgolf -W ~/.vim-last-scriptout \
             /tmp/foo.golf -O $VGOLF/$chall
+        echo ""
         echo "This attempt took you == $keystrokes == keystrokes"
         read -p "Continue playing (Y|n)? " answer
         case "$answer" in
