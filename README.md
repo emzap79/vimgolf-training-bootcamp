@@ -5,9 +5,9 @@ offline.  After saving your session `ZZ`, it'll prompt the amount of keysrokes
 and leave you with some further options to choose, such as `change challenge`,
 `rm challenge` or `quit`.
 
-# Add Challenges
+## Add Challenges
 
-It's simple enough, I give you a gothrough anyways.
+It's simple enough, I give you a short gothrough:
 
 1. clone this repository to wherever you like:
 
@@ -25,6 +25,6 @@ It's simple enough, I give you a gothrough anyways.
 5. start playing and save some keystrokes :bowtie:
 
 
-# Author
+## Author
 
 < emzap79 [at] gmail [dot] com >
