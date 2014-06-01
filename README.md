@@ -15,9 +15,10 @@ It's simple enough, I give you a gothrough anyways.
 
 2. `cd` into it,
 
-3. copy text from vimgolf.com and save it as *chall_< name_of_chall >.vg*
-   into directory. Be aware to copy the entire challenge (as long as it
-   contains "start file" and "end file", you're save!).
+3. copy text from vimgolf.com and save it as *chall_< name_of_chall >.vg* into
+   directory. Be sure to copy the entire challenge, including both, start file
+   as well as the challenges final version (as long as it contains
+   "start file" and "end file", you're save!).
 
 4. Make this script executable `chmod +x ./vimGolf.sh`, then ...
 

@@ -21,7 +21,7 @@ select_challenge() {
                     echo "wrong selection, please try again!"
                 else
                     echo "you picked challenge: ${chall#chall_}"
-                    cat $VGOLF/$chall | sed '/^start\ file/I,/^end\ file/I!d' | egrep -iv '(^start|^end|^$)' > /tmp/foo.golf
+                    cat $VGOLF/$chall | sed '/^start\ file/I,/^end\ file/I!d' | head -n -2 | tail -n +3 > /tmp/foo.golf
                     break
                 fi
                 ;;
