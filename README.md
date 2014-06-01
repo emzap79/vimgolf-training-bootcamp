@@ -18,7 +18,7 @@ It's simple enough, I give you a gothrough anyways.
 3. copy text from vimgolf.com and save it as *chall_< name_of_chall >.vg* into
    directory. Be sure to copy the entire challenge, including both, start file
    as well as the challenges final version (as long as it contains
-   "start file" and "end file", you're save!).
+   "start file" and "view diff", you're save!).
 
 4. Make this script executable `chmod +x ./vimGolf.sh`, then ...
 

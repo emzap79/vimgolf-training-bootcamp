@@ -3,33 +3,6 @@
 # vimgolf
 VGOLF="./"
 
-select_challenge() {
-
-    loc=$(ls -ltc $VGOLF/chall* | awk '{print substr($0, index($0, "chall"))}')
-    locnr=$(echo $loc | tr ' ' '\n' | wc -l)
-    locnr=$(( $locnr+1 ))
-    PS3="Choose one of the challenges: "
-    echo ""
-    select chall in $loc "Go Back"
-    do
-        case $REPLY in
-            $locnr )
-                select_action
-                ;;
-            *)
-                if [[ $REPLY -gt $locnr ]]; then
-                    echo "wrong selection, please try again!"
-                else
-                    echo "you picked challenge: ${chall#chall_}"
-                    cat $VGOLF/$chall | sed '/^start\ file/I,/^end\ file/I!d' | head -n -2 | tail -n +3 > /tmp/foo.golf
-                    break
-                fi
-                ;;
-        esac
-    done
-
-}
-
 select_action() {
 
     while true
@@ -57,6 +30,42 @@ select_action() {
 
 }
 
+select_challenge() {
+
+    loc=$(ls -ltc $VGOLF/chall* | awk '{print substr($0, index($0, "chall"))}')
+    locnr=$(echo $loc | tr ' ' '\n' | wc -l)
+    locnr=$(( $locnr+1 ))
+    PS3="Choose one of the challenges: "
+    echo ""
+    select chall in $loc "Go Back"
+    do
+        case $REPLY in
+            $locnr )
+                select_action
+                ;;
+            *)
+                if [[ $REPLY -gt $locnr ]]; then
+                    echo "wrong selection, please try again!"
+                else
+                    create_challenge
+                    echo "you picked challenge: ${chall#chall_}"
+                    break
+                fi
+                ;;
+        esac
+    done
+
+}
+
+create_challenge() {
+
+    # parse start file only
+    cat $VGOLF/$chall | sed '/^start\ file/I,/^end\ file/I!d' | head -n -2 | tail -n +3 > /tmp/foo.golf
+    echo $chall
+    cat /tmp/foo.golf
+
+}
+
 chall_play() {
 
     while true
@@ -69,6 +78,7 @@ chall_play() {
         read -p "Continue playing (Y|n)? " answer
         case "$answer" in
             Yes|yes|Y|y|"")
+                create_challenge
                 # break
                 ;;
             No|no|N|n)
