@@ -1,0 +1,57 @@
+" http://vimdoc.sourceforge.net/htmldoc/starting.html#vimrc
+" https://gist.github.com/igrigorik/759425
+
+set nocompatible        " use vim defaults
+set scrolloff=3         " keep 3 lines when scrolling
+set ai                  " set auto-indenting on for programming
+
+set showcmd             " display incomplete commands
+set nobackup            " do not keep a backup file
+set number              " show line numbers
+set ruler               " show the current row and column
+
+set hlsearch            " highlight searches
+set incsearch           " do incremental searching
+set showmatch           " jump to matches when entering regexp
+set ignorecase          " ignore case when searching
+set smartcase           " no ignorecase if Uppercase char present
+
+set visualbell t_vb=    " turn off error beep/flash
+set novisualbell        " turn off visual bell
+
+set backspace=indent,eol,start  " make that backspace key work the way it should
+set runtimepath=$VIMRUNTIME     " turn off user scripts, https://github.com/igrigorik/vimgolf/issues/129
+
+syntax on               " turn syntax highlighting on by default
+filetype on             " detect type of file
+filetype plugin indent on      " load indent file for specific file type
+
+set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
+
+" Avoid E173
+" http://vim.1045645.n5.nabble.com/Re-how-to-suppress-quot-E173-1-more-file-to-edit-quot-td5716336.html
+if argc() > 1
+  silent blast " load last buffer
+  silent bfirst " switch back to the first
+endif
+
+nnoremap ZZ :wqall!<cr>
+
+" paste to clipboard
+set cb+=unnamed                        " clipboard: yank and copy to X clipboard
+set cb+=unnamedplus                    " clipboard: use yanking to clipboard as default
+
+" Clear all Registers
+" http://kba49.wordpress.com/2013/03/21/clear-all-registers-and-macros-in-vim/
+function! ClearRegisters()
+    let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
+    let i=0
+    while (i<strlen(regs))
+        exec 'let @'.regs[i].'=""'
+        let i=i+1
+    endwhile
+endfunction
+command! ClearRegisters call ClearRegisters()
+au VimEnter * call ClearRegisters()
+
+" Func: Clear all registers"}}}

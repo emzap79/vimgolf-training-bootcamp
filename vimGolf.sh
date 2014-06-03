@@ -70,9 +70,8 @@ chall_play() {
 
     while true
     do
-        keystrokes=$(cat ~/.vim-last-scriptout | wc -c)
-        vim -u ~/.vim/vimrc_vimgolf -W ~/.vim-last-scriptout \
-            /tmp/foo.golf -O $VGOLF/$chall
+        vim -u ./vimrc_vimgolf -W ./vim-last-scriptout /tmp/foo.golf -O $VGOLF/$chall
+        keystrokes=$(cat ./vim-last-scriptout | wc -c)
         echo ""
         echo "This attempt took you == $keystrokes == keystrokes"
         read -p "Continue playing (Y|n)? " answer
