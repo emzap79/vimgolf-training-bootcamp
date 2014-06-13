@@ -235,15 +235,15 @@ Compile C
 Deleting folded text
 ####################
 
-./chall_deleting_folded_text.vg
-vimgolf put 4d1a87fcb8cb340932000290
-http://vimgolf.com/challenges/4d1a87fcb8cb340932000290
-
-oaoeu<Home>zjx@.<C-U><C-@>@.ZZ This time the macro is removed with C-U, which
-is normally problematic (moves your buffer around), but we can't end the edit
-at that point without losing the option of C-@. Run :di after the whole insert,
-and you'll see there's junk at the end of ". But: Lesson 5: In a recursive
-macro, nothing after the recursive call can ever run.
+# ./chall_deleting_folded_text.vg
+# vimgolf put 4d1a87fcb8cb340932000290
+# http://vimgolf.com/challenges/4d1a87fcb8cb340932000290
+#
+# oaoeu<Home>zjx@.<C-U><C-@>@.ZZ This time the macro is removed with C-U, which
+# is normally problematic (moves your buffer around), but we can't end the edit
+# at that point without losing the option of C-@. Run :di after the whole insert,
+# and you'll see there's junk at the end of ". But: Lesson 5: In a recursive
+# macro, nothing after the recursive call can ever run.
 
 Reverse Simple Deletion and Generate English Alphabets
 ######################################################

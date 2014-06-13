@@ -1,0 +1,15 @@
+Letter case trickery
+
+This file is in a downright esoteric format, consisting of hexadecimal numbers,
+non-hexadecimal keywords, and "Z" indicating end-of-line. Make the hexadecimal
+numbers lowercase.
+
+Start file
+
+A4E SUM 3C0Z
+2B A9 NE F2Z
+
+End file
+
+a4e SUM 3c0Z
+2b a9 NE f2Z
