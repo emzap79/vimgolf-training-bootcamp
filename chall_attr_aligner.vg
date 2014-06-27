@@ -1,0 +1,21 @@
+attr_aligner
+
+Two attr keywords. Two separate indentations. Align the colons.
+Start file
+
+attr_reader :align, :variables, :with
+attr_accessor :spaces, :to, :complete, :challenge
+# vim: set expandtab:
+
+End file
+
+attr_reader :align,
+            :variables,
+            :with
+attr_accessor :spaces,
+              :to,
+              :complete,
+              :challenge
+# vim: set expandtab:
+
+vimgolf put 524e1a20b81fe50002000008
