@@ -70,7 +70,7 @@ chall_play() {
 
     while true
     do
-        if test -f /tmp/.foo.golf.swp; rm /tmp/.foo.golf.swp; fi
+        if test -f /tmp/.foo.golf.swp; then rm /tmp/.foo.golf.swp; fi
         vim -u ./vimrc_vimgolf -W ./vim-last-scriptout /tmp/foo.golf -O $VGOLF/$chall
         keystrokes=$(cat ./vim-last-scriptout | wc -c)
         echo ""
