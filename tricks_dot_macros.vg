@@ -248,25 +248,25 @@ Deleting folded text
 Reverse Simple Deletion and Generate English Alphabets
 ######################################################
 
-There are a lot of 12-stroke answers for a good reason. There's really only one
-clear way to do it. Even if you've read all the solutions above, it's not
-obvious how to convert the macro to @. It's impossible to escape out of insert
-mode inside a @. macro. If you use C-V or a C-K digraph, then run :di, you'll
-see your Esc, C-C, or C-@ get escaped by a C-V in the ". register. If you copy
-a literal Esc elsewhere in the file and try using <C-R>" you exit insert mode.
-If you get clever and try <C-R><C-R>" the register gets a C-V again. And in
-this challenge, you need to enter and exit insert mode 25 times.
-a.<BS><CR><Esc>24@.ZZ I got around that limitation by using . in my @. macro.
-The . repeats the initial insert, thereby "embedding" a complete insert, with a
-"virtual escape", in the ". register. BS "cancels" the . during the insert, and
-also cancels the CR in the macro, because since you're guaranteed to be at the
-beginning of the line, BS moves the cursor to the previous line. If CR was run
-from the last line, the macro would fail.  Lesson 6?: I just don't know. I'm
-still stunned that this actually works. I don't know how anything remotely
-similar could do anything useful.  Conclusion I hope you find some applications
-in challenges I missed. Maybe one will pop up in the future. I also hope you
-don't find any applications in real life.  Lesson 7: Couldn't resist. There's
-another trick I have that I've never managed to use. If you need to add a blank
-line AND define a @. macro, try omacrohere<Esc>U
+# There are a lot of 12-stroke answers for a good reason. There's really only one
+# clear way to do it. Even if you've read all the solutions above, it's not
+# obvious how to convert the macro to @. It's impossible to escape out of insert
+# mode inside a @. macro. If you use C-V or a C-K digraph, then run :di, you'll
+# see your Esc, C-C, or C-@ get escaped by a C-V in the ". register. If you copy
+# a literal Esc elsewhere in the file and try using <C-R>" you exit insert mode.
+# If you get clever and try <C-R><C-R>" the register gets a C-V again. And in
+# this challenge, you need to enter and exit insert mode 25 times.
+# a.<BS><CR><Esc>24@.ZZ I got around that limitation by using . in my @. macro.
+# The . repeats the initial insert, thereby "embedding" a complete insert, with a
+# "virtual escape", in the ". register. BS "cancels" the . during the insert, and
+# also cancels the CR in the macro, because since you're guaranteed to be at the
+# beginning of the line, BS moves the cursor to the previous line. If CR was run
+# from the last line, the macro would fail.  Lesson 6?: I just don't know. I'm
+# still stunned that this actually works. I don't know how anything remotely
+# similar could do anything useful.  Conclusion I hope you find some applications
+# in challenges I missed. Maybe one will pop up in the future. I also hope you
+# don't find any applications in real life.  Lesson 7: Couldn't resist. There's
+# another trick I have that I've never managed to use. If you need to add a blank
+# line AND define a @. macro, try omacrohere<Esc>U
 
 # }}}

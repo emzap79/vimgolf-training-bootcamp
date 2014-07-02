@@ -70,7 +70,6 @@ chall_play() {
 
     while true
     do
-        if test -f /tmp/.foo.golf.swp; rm /tmp/.foo.golf.swp; fi
         vim -u ./vimrc_vimgolf -W ./vim-last-scriptout /tmp/foo.golf -O $VGOLF/$chall
         keystrokes=$(cat ./vim-last-scriptout | wc -c)
         echo ""
@@ -93,7 +92,7 @@ chall_play() {
                         ;;
                     Q|q|"")
                         echo "See you old friend, now save some keystrokes in the real world ;)"
-                        exit 1
+                        exit 0
                 esac
                 ;;
             *)
