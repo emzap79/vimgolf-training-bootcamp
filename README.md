@@ -20,7 +20,7 @@ It's simple enough, I give you a short gothrough:
    as well as the challenges final version (as long as it contains
    "start file" and "view diff", you're save!).
 
-4. Make this script executable `chmod +x ./vimGolf.sh`, then ...
+4. Make this script executable `chmod 0755 ./vimGolf.sh`, then ...
 
 5. start playing and save some keystrokes :bowtie:
 
