@@ -1,0 +1,62 @@
+Neither Fizz nor Buzz
+
+Not your regular increment macro! The gaps are tricky.
+
+Start file
+
+0
+0
+Fizz
+0
+Buzz
+Fizz
+0
+0
+Fizz
+Buzz
+0
+Fizz
+0
+0
+FizzBuzz
+
+End file
+
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+
+vimgolf put 53bddd87dbd3db0002c48c0f
+http://vimgolf.com/challenges/53bddd87dbd3db0002c48c0f
+
+
+#1 - Tim Chase / @gumnos
+15
+07/10/2014 at 04:46PM
+
+#2 - Urtica dioica / @udioica
+15
+07/10/2014 at 05:06PM
+
+#3 - Petro Тrouq / @zulolosi
+15
+07/10/2014 at 10:22PM
+
+...
+
+
+#6 - Carlos López / @morrizon
+16
+07/11/2014 at 07:24AM
