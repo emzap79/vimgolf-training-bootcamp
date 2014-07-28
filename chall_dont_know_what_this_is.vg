@@ -1,6 +1,8 @@
 Don't know what this is
 
-Replace contents of brackets with matching number of spaces. Don't ask what the format's supposed to be.
+Replace contents of brackets with matching number of spaces. Don't ask what the
+format's supposed to be.
+
 Start file
 
 [1:0]
@@ -15,8 +17,8 @@ End file
 [     ]
 [     ]
 
-
 #1 - Tim Chase / @gumnos
+11
 07/16/2014 at 01:52PM
 
 #2 - Urtica dioica / @udioica
@@ -26,3 +28,5 @@ End file
 #5 - John Meisner / @jmeisned
 12
 07/16/2014 at 07:17AM
+
+vimgolf put 53c66c482b4166000226bbee
