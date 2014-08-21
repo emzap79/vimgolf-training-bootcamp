@@ -1,21 +1,22 @@
 #! /bin/bash
 
 # vimgolf
-VGOLF="./"
+VGOLF="$PWD"
+echo $VGOLF
 
 select_action() {
 
     while true
     do PS3="What you're gonna do? "
         echo ""
-        select option in  "Remove Challenge" "Play Challenge" "Show Tips" "Quit"
+        select option in  "Play Challenge" "Remove Challenge" "Show Tips" "Quit"
         do
             case $REPLY in
                 1) select_challenge
-                    chall_remove
+                    chall_play
                     ;;
                 2) select_challenge
-                    chall_play
+                    chall_remove
                     ;;
                 3) vim $VGOLF/tricks_dot_macros.vg
                     break
@@ -32,16 +33,21 @@ select_action() {
 
 select_challenge() {
 
-    loc=$(ls -ltc $VGOLF/chall* | awk '{print substr($0, index($0, "chall"))}')
+    loc=$(ls -ltc $VGOLF/chall*.vg | awk '{print substr($0, index($0, "chall"))}')
     locnr=$(echo $loc | tr ' ' '\n' | wc -l)
     locnr=$(( $locnr+1 ))
+    locnr_last=$(( $locnr+1 ))
     PS3="Choose one of the challenges: "
     echo ""
-    select chall in $loc "Go Back"
+    select chall in $loc "Go Back to Menu" "Quit"
     do
         case $REPLY in
             $locnr )
                 select_action
+                ;;
+            $locnr_last )
+                echo "See you old friend, now save some keystrokes in the real world ;)"
+                exit 0
                 ;;
             *)
                 if [[ $REPLY -gt $locnr ]]; then
@@ -75,7 +81,7 @@ chall_play() {
         keystrokes=$(cat ./vim-last-scriptout | wc -c)
         echo ""
         echo "This attempt took you == $keystrokes == keystrokes"
-        read -p "Continue playing (Y|n)? " answer
+        read -p "Continue with this challenge (Y|n)? " answer
         case "$answer" in
             Yes|yes|Y|y|"")
                 create_challenge
@@ -83,17 +89,14 @@ chall_play() {
                 ;;
             No|no|N|n)
                 echo ""
-                echo "[r]emove this challenge,"
-                echo "[c]hange to a new golf course,"
-                read -p "or [q]uit? " answ
+                echo "[p]lay challenge from vimgolf.com"
+                echo "[c]hange to a new golf course"
+                read -p "your answer: " answ
                 case $answ in
-                    C|c) select_challenge
+                    C|c|"") select_challenge
                         ;;
-                    R|r) chall_remove
+                    P|p) chall_downl
                         ;;
-                    Q|q|"")
-                        echo "See you old friend, now save some keystrokes in the real world ;)"
-                        exit 1
                 esac
                 ;;
             *)
@@ -101,6 +104,16 @@ chall_play() {
                 ;;
         esac
     done
+
+}
+
+chall_downl() {
+
+    # chalOnline=$(grep put "$VGOLF/$chall")
+    chalOnline=$(cat "$VGOLF/$chall" | grep ^http | sed 's/^.*\///g;s/^/vimgolf put /g')
+    sudo $chalOnline
+    # echo "See you old friend, now save some keystrokes in the real world ;)"
+    # exit 0
 
 }
 
