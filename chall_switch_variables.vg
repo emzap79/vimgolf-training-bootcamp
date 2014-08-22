@@ -1,0 +1,13 @@
+switch variable
+
+how fast can you switch two variable ?
+Start file
+
+int barins, foovariable = 1; 
+
+End file
+
+int foovariable, barins = 1; 
+
+===
+vimgolf put 4f0720c8f037090001000007

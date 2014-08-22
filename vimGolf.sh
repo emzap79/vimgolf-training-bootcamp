@@ -67,8 +67,7 @@ create_challenge() {
 
     # parse start file only
     cat $VGOLF/$chall | sed '/^start\ file/I,/^end\ file/I!d' | head -n -2 | tail -n +3 > /tmp/foo.golf
-    echo $chall
-    cat /tmp/foo.golf
+    cat $VGOLF/$chall | sed '/^end\ file/I,$!d' > /tmp/foo.solution.golf
 
 }
 
@@ -77,7 +76,7 @@ chall_play() {
     while true
     do
         if test -f /tmp/.foo.golf.swp; then rm /tmp/.foo.golf.swp; fi
-        vim -u ./vimrc_vimgolf -W ./vim-last-scriptout /tmp/foo.golf -O $VGOLF/$chall
+        vim -u ./vimrc_vimgolf -W ./vim-last-scriptout /tmp/foo.golf -O /tmp/foo.solution.golf
         keystrokes=$(cat ./vim-last-scriptout | wc -c)
         echo ""
         echo "This attempt took you == $keystrokes == keystrokes"
@@ -91,7 +90,8 @@ chall_play() {
                 echo ""
                 echo "[p]lay challenge from vimgolf.com"
                 echo "[c]hange to a new golf course"
-                read -p "your answer: " answ
+                echo ""
+                read -p "[Ctrl + C] to exit vimgolf: " answ
                 case $answ in
                     C|c|"") select_challenge
                         ;;
@@ -109,11 +109,14 @@ chall_play() {
 
 chall_downl() {
 
-    # chalOnline=$(grep put "$VGOLF/$chall")
-    chalOnline=$(cat "$VGOLF/$chall" | grep ^http | sed 's/^.*\///g;s/^/vimgolf put /g')
-    sudo $chalOnline
-    # echo "See you old friend, now save some keystrokes in the real world ;)"
-    # exit 0
+    chkVimg=$(grep put "$VGOLF/$chall"| wc -l)
+    if [[ $chkVimg = 1 ]]; then
+        sudo $(grep put "$VGOLF/$chall")
+    else
+        sudo $(cat "$VGOLF/$chall" | grep ^http | sed 's/^.*\///g;s/^/vimgolf put /g')
+    fi
+    echo "See you old friend, now save some keystrokes in the real world ;)"
+    exit 0
 
 }
 
