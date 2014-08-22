@@ -76,7 +76,7 @@ chall_play() {
     while true
     do
         if test -f /tmp/.foo.golf.swp; then rm /tmp/.foo.golf.swp; fi
-        vim -u ./vimrc_vimgolf -W ./vim-last-scriptout /tmp/foo.golf -O /tmp/foo.solution.golf
+        vim -u ./vimrc_vimgolf -W ./vim-last-scriptout $VGOLF/${chall%.*}.notes -O /tmp/foo.solution.golf -c '30split /tmp/foo.golf'
         keystrokes=$(cat ./vim-last-scriptout | wc -c)
         echo ""
         echo "This attempt took you == $keystrokes == keystrokes"
@@ -109,9 +109,9 @@ chall_play() {
 
 chall_downl() {
 
-    chkVimg=$(grep put "$VGOLF/$chall"| wc -l)
+    chkVimg=$(egrep "^vimgolf put" "$VGOLF/$chall"| wc -l)
     if [[ $chkVimg = 1 ]]; then
-        sudo $(grep put "$VGOLF/$chall")
+        sudo $(egrep "^vimgolf put" "$VGOLF/$chall")
     else
         sudo $(cat "$VGOLF/$chall" | grep ^http | sed 's/^.*\///g;s/^/vimgolf put /g')
     fi

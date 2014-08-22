@@ -1,6 +1,6 @@
 # About
 
-Created a little script which lets you practice your favourite challenges
+I've created a little script which lets you practice your favourite challenges
 offline.  After saving your session `ZZ`, it'll prompt the amount of keysrokes
 and leave you with some further options to choose, such as `change challenge`,
 `rm challenge` or `quit`.
