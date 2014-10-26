@@ -9,19 +9,21 @@ select_action() {
     while true
     do PS3="What you're gonna do? "
         echo ""
-        select option in  "Play Challenge" "Remove Challenge" "Show Tips" "Quit"
+        select option in  "Play Challenge" "Add Challenge" "Edit Challenge" "Show Tips" "Quit"
         do
             case $REPLY in
                 1) select_challenge
                     chall_play
                     ;;
-                2) select_challenge
-                    chall_remove
+                2) chall_add
                     ;;
-                3) vim $VGOLF/tricks_dot_macros.vg
+                3) select_challenge
+                    chall_edit
+                    ;;
+                4) vim $VGOLF/tricks_dot_macros.vg
                     break
                     ;;
-                4) echo "See you old friend, now save some keystrokes in the real world ;)"
+                5) echo "See you old friend, now save some keystrokes in the real world ;)"
                     exit 0
                     ;;
             esac
@@ -71,6 +73,14 @@ create_challenge() {
 
 }
 
+remove_challenge() {
+
+    # rename challenge
+    mv "$VGOLF/$chall" "$VGOLF/$chall".done
+    select_challenge
+
+}
+
 chall_play() {
 
     while true
@@ -90,12 +100,15 @@ chall_play() {
                 echo ""
                 echo "[p]lay challenge from vimgolf.com"
                 echo "[c]hange to a new golf course"
+                echo "[r]emove challenge"
                 echo ""
                 read -p "[Ctrl + C] to exit vimgolf: " answ
                 case $answ in
                     C|c|"") select_challenge
                         ;;
                     P|p) chall_downl
+                        ;;
+                    R|r) remove_challenge
                         ;;
                 esac
                 ;;
@@ -120,16 +133,16 @@ chall_downl() {
 
 }
 
-chall_remove() {
+chall_edit() {
 
     while true
     do
-        read -p "You're sure you wanna delete this challenge: $chall (Y|n)? " answer
+        read -p "You're sure you wanna edit this challenge: $chall (Y|n)? " answer
         case "$answer" in
             Yes|yes|Y|y|"")
-                mv $VGOLF/$chall /tmp/
+                vim $VGOLF/$chall
                 echo ""
-                echo "successfully removed challenge $chall from directory"
+                echo "successfully edited challenge $chall"
                 select_action
                 ;;
             No|no|N|n)
@@ -143,6 +156,15 @@ chall_remove() {
                 ;;
         esac; break
     done
+
+}
+
+chall_add() {
+
+    read -p "Name of new challenge " newchall
+    newchall=$(echo "$newchall" | sed -r 's/./\L&/g;s/ /_/g')
+    vim -u ./vimrc_vimgolf chall_"$newchall".vg
+    select_action
 
 }
 

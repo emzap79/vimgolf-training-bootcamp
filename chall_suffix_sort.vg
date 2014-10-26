@@ -1,0 +1,51 @@
+Suffix sort
+
+Sort from the end of the line, as if the letters in each line were reversed.
+Start file
+
+adjutants
+ametropic
+audiobook
+blockable
+demagogic
+embryotic
+excusable
+garroters
+housesits
+labellers
+opacifier
+proofroom
+quercetin
+rejudging
+supremely
+
+End file
+
+demagogic
+ametropic
+embryotic
+blockable
+excusable
+rejudging
+audiobook
+proofroom
+quercetin
+opacifier
+labellers
+garroters
+housesits
+adjutants
+supremely
+
+View Diff
+vimgolf put 53fdb108658ede0002599a8f
+
+ #1 - Caek / @Caek_
+27
+08/27/2014 at 04:46AM
+
+#2 - Guillaume Seren / @guillaumeseren
+27
+08/27/2014 at 04:59AM
+:so<Tab>/.$/r<CR>ddp9jddGPkdd2kPZZ
+

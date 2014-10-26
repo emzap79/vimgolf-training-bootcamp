@@ -1,0 +1,79 @@
+-a-b-c-
+
+Put hyphens everywhere.
+Start file
+
+abcdefghijklm
+
+End file
+
+-a-b-c-d-e-f-g-h-i-j-k-l-m-
+
+View Diff
+Solutions
+
+The best way to learn is to practice. Below, you will find some of the solutions other golfers have entered. To unlock higher ranked solutions, submit your own entry which does as well or better than the solutions you can currently see - climb the ladder!
+
+Check out these helpful resources to improve your Vim skills... Game on.
+Unlock 17 remaining solutions by submitting a higher ranked entry
+#18 kli6891 / @kli6891 - Score: 13 - 09/09/14 @ 10:49
+
+:s/\n*/-/g<CR>ZZ
+
+0 comments - Comment
+#19 Kai Yuan / @kentyuan - Score: 14 - 09/03/14 @ 01:30
+
+qqi-<Right><ff-58>2lq7@qZZ
+
+@kentyuan: I don't like the <right>... but could not make 14 without it. :(
+
+@Dr4k3_LE: Could you give me a hint about the <ff-58>, please?
+
+@udioica: I don't like it either. I suspected there might be a working cursor key 14, but I didn't explore enough to find something this clever. Looks like I should have doen the whole alphabet to block the single digit repeat. ;) Anyway, with <C-O>a it's another 15.
+
+@kentyuan: @udioca, yes, <c-o> is nicer, but it was 15, <right> is 14...like my first comment..
+
+@kentyuan: it seems that <right> is right! :-D
+
+@udioica: I've been meaning to lobby for 2-stroke cursor keys... The challenge is broken, but not solved. Keep trying to solve it!
+
+@zulolosi: Nice ! <ff-58> key is Ctrl-@ (or Ctrl-2) combination: help i_CTRL-@ -> Insert previously inserted text and stop insert
+
+@Dr4k3_LE: @zulolosi, thx :)
+
+8 comments - Comment
+#20 John Braxler / @braxler - Score: 14 - 09/03/14 @ 05:40
+
+:s/\_A*/-/g<CR>ZZ
+
+#20 John Braxler / @braxler - Score: 14 - 09/03/14 @ 05:40
+
+:s/\_A*/-/g<CR>ZZ
+
+0 comments - Comment
+#21 Daniel Beck / @daniel_beck_il - Score: 14 - 09/04/14 @ 14:32
+
+:s/\_A*/-/g|x<CR>
+
+0 comments - Comment
+#22 Kerson Hsiao / @KersonHsiao - Score: 14 - 09/07/14 @ 20:25
+
+i-<Esc>s p<Esc>u13@.ZZ
+
+0 comments - Comment 
+===
+vimgolf put 540629666a1e4000020d9e5a
+
+#1 - Tim Chase / @gumnos
+13
+09/03/2014 at 01:00PM
+
+#2 - Urtica dioica / @udioica
+13
+09/03/2014 at 01:56PM
+
+...
+
+ #19 - Kai Yuan / @kentyuan
+ 09/03/2014 at 01:30AM
+

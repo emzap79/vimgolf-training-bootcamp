@@ -1,5 +1,8 @@
+" vim:fdm=marker
 " http://vimdoc.sourceforge.net/htmldoc/starting.html#vimrc
 " https://gist.github.com/igrigorik/759425
+
+" Config               {{{1
 
 set nocompatible        " use vim defaults
 set scrolloff=3         " keep 3 lines when scrolling
@@ -54,4 +57,55 @@ endfunction
 command! ClearRegisters call ClearRegisters()
 au VimEnter * call ClearRegisters()
 
-" Func: Clear all registers"}}}
+" Highlighting         {{{1
+"
+" VimDiff            " {{{2
+
+autocmd ColorScheme * highlight DiffAdd     ctermbg=green      ctermfg=0
+autocmd ColorScheme * highlight DiffDelete  ctermbg=0       ctermfg=blue
+autocmd ColorScheme * highlight DiffText    ctermbg=0       ctermfg=white
+autocmd ColorScheme * highlight DiffChange  ctermbg=0       ctermfg=magenta
+
+" Set Cursor         " {{{2
+
+" http://stackoverflow.com/a/7619174
+" http://vim.1045645.n5.nabble.com/Cursor-line-and-cursor-column-highlighting-tc1843171.html#none
+if &bg == 'dark'
+    hi  CursorColumn ctermbg=Yellow ctermfg=None
+else
+    hi  CursorColumn ctermbg=Black ctermfg=None
+endif
+"hi clear CursorColumn
+"hi! link CursorColumn CursorLine
+
+" Customized         " {{{2
+
+" Text
+" autocmd ColorScheme * highlight Normal  ctermbg=None
+" autocmd ColorScheme * highlight NonText ctermbg=None
+autocmd ColorScheme * highlight ColorColumn               ctermbg=magenta ctermfg=none cterm=none
+
+" Search & Spellcheck" {{{2
+
+autocmd  ColorScheme  *  highlight  SpellCap                   ctermfg=7     ctermbg=6   cterm=none
+autocmd  ColorScheme  *  highlight  SpellLocal                 ctermfg=7     ctermbg=8   cterm=none
+autocmd  ColorScheme  *  highlight  SpellRare                  ctermfg=7     ctermbg=9   cterm=none
+autocmd  ColorScheme  *  highlight  SpellBad                   ctermfg=7     ctermbg=10   cterm=none
+autocmd  ColorScheme  *  highlight  Search                     ctermfg=none  ctermbg=255  cterm=none
+autocmd  ColorScheme  *  highlight  IncSearch                  ctermfg=none  ctermbg=192  cterm=none
+autocmd  ColorScheme  *  highlight  LanguageToolGrammarError   ctermfg=none  ctermbg=53   cterm=none
+autocmd  ColorScheme  *  highlight  LanguageToolCmd            ctermfg=none  ctermbg=53   cterm=none
+autocmd  ColorScheme  *  highlight  LanguageToolLabel          ctermfg=none  ctermbg=53   cterm=none
+autocmd  ColorScheme  *  highlight  LanguageToolErrorCount     ctermfg=none  ctermbg=53   cterm=none
+autocmd  ColorScheme  *  highlight  LanguageToolSpellingError  ctermfg=none  ctermbg=55   cterm=none
+
+" Menu               " {{{2
+
+" autocmd  ColorScheme  *  "   ->          Menu
+autocmd  ColorScheme  *  hi  PmenuSbar   ctermbg=1  ctermfg=2  cterm=none
+autocmd  ColorScheme  *  hi  PmenuThumb  ctermbg=4  ctermfg=2  cterm=none
+autocmd  ColorScheme  *  hi  Pmenu       ctermbg=7  ctermfg=2  cterm=none
+autocmd  ColorScheme  *  hi  ModeMsg     ctermbg=2  ctermfg=7  cterm=none
+autocmd  ColorScheme  *  hi  MoreMsg     ctermbg=2  ctermfg=7  cterm=none
+autocmd  ColorScheme  *  hi  PmenuSel    ctermbg=2  ctermfg=7  cterm=none
+

@@ -1,0 +1,15 @@
+Gray area
+
+It's a golf metaphor or something.
+Start file
+
+a_golf_ball - > - > - > - > |___________| -
+
+End file
+
+            - > - > - > - > |a_golf_ball| -
+
+View Diff
+===
+vimgolf put 5447b459380e8b0002000db3
+http://www.vimgolf.com/challenges/5447b459380e8b0002000db3

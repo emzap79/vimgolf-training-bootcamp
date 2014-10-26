@@ -5,6 +5,7 @@ paragraph, so we can compare their scores more easily.
 
 Start file
 
+
 4d1a34ccfa85f32065000004 Alice: 15 # Simple text editing with Vim
 4d1a8bf2b8cb3409320002c4 Alice: 12 # Search and Replace 0
 4d1cdb0635b40650b8000527 Alice: 16 # Make Fancy Header
