@@ -8,5 +8,6 @@ Session.vim
 .netrwhist
 *~
 *.notes
+*.done
 *.notes.swp
 vim-last-scriptout
