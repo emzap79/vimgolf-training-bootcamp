@@ -1,0 +1,30 @@
+C to VimDict
+
+Convert a C data structure to a Vimscript dictionary.
+Start file
+
+{ "Return", '\n', },
+{ "ampersand", '&', },
+{ "apostrophe", '\'', },
+{ "asciicircum", '^', },
+{ "asciitilde", '~', },
+{ "asterisk", '*', },
+{ "at", '@', },
+{ "backslash", '\\', },
+
+End file
+
+{
+\  "\n" : 'Return',
+\  "&"  : 'ampersand',
+\  "\'" : 'apostrophe',
+\  "^"  : 'asciicircum',
+\  "~"  : 'asciitilde',
+\  "*"  : 'asterisk',
+\  "@"  : 'at',
+\  "\\" : 'backslash',
+\}
+
+View Diff
+vimgolf put 54a94976f4048c00026d8ed6
+http://www.vimgolf.com/challenges/54a94976f4048c00026d8ed6

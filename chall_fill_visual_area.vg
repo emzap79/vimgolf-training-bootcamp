@@ -1,0 +1,38 @@
+Fill visual area
+
+Just have fun!
+Start file
+
+vim: set nrformats=alpha:
+----------
+----------
+----------
+----------
+----------
+----------
+----------
+----------
+----------
+----------
+
+End file
+
+vim: set nrformats=alpha:
+jihgfedcba
+iihgfedcba
+hhhgfedcba
+ggggfedcba
+fffffedcba
+eeeeeedcba
+dddddddcba
+ccccccccba
+bbbbbbbbba
+aaaaaaaaaa
+
+View Diff
+==
+http://www.vimgolf.com/challenges/54fb143d91984a0e75007579
+vimgolf put 54fb143d91984a0e75007579
+
+1-4:	20
+5:	28

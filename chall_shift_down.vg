@@ -1,0 +1,28 @@
+Shift down
+
+Number words are back.
+Start file
+
+one two three
+
+four five six
+
+seven eight nine
+
+End file
+
+one
+    two
+        three
+
+four
+     five
+          six
+
+seven
+      eight
+            nine
+
+View Diff
+http://www.vimgolf.com/challenges/54514fd7238fe900021e7c42
+vimgolf put 54514fd7238fe900021e7c42

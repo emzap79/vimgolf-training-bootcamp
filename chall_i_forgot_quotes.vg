@@ -1,0 +1,18 @@
+I forgot quotes
+
+Oops.
+Start file
+
+foo = a
+      ab
+      abc
+
+End file
+
+foo = "a"
+      "ab"
+      "abc"
+
+View Diff
+vimgolf put 5462e3f41198b80002512673
+http://www.vimgolf.com/challenges/5462e3f41198b80002512673

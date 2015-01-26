@@ -1,0 +1,21 @@
+Pretty format for variable declarations
+
+Project standards demand the equal signs must be aligned for better readability.
+Start file
+
+var parser = require('../src/grammar.js'),
+    src = require('../src/blueberry.js'),
+    fs = require('fs'),
+    glob = require('glob');
+
+End file
+
+var parser = require('../src/grammar.js'),
+    src    = require('../src/blueberry.js'),
+    fs     = require('fs'),
+    glob   = require('glob');
+
+View Diff
+==
+http://www.vimgolf.com/challenges/546a627195f6da000265742d
+vimgolf put 546a627195f6da000265742d

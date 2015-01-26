@@ -1,0 +1,35 @@
+Not enough Ps
+
+Different type of code
+Start file
+
+A B C D
+B A X Y
+B X Y D
+D C B A
+X D A B
+B W Y D
+W B D X
+A B D X
+D Z B Y
+D Z B A
+
+End file
+
+A P C D
+P A X Y
+B X Y D
+D C P A
+X D A P
+B W Y D
+W B D X
+A P D X
+D Z B Y
+D Z P A
+
+==
+http://www.vimgolf.com/challenges/55007a7412685a180e000005
+vimgolf put 55007a7412685a180e000005
+
+1 - 10:	13
+11:	14

@@ -1,0 +1,46 @@
+Start file
+
+Johm Smith
+Mary Gold
+Alfred Quinn
+Michal Jackson
+Zeeshan Jan
+
+End file
+
+John          Smith
+Mary          Gold
+Alfred        Quinn
+Michal        Jackson
+Zeeshan       Jan
+
+View Diff
+1: 19
+2: 20
+3: 21
+12: 33
+
+#3 Adam Stankiewicz / @sheerun - Score: 20 - 01/25/15 @ 10:08
+
+ernl<C-V>jy9p2j7pj6p6xZZ
+
+@zulolosi: Nice!
+
+@udioica: Not a lot of entropy in the position of the spaces on each line. Good job spotting that.
+
+2 comments - Comment
+#4 Harm te Hennepe / @HrmtH - Score: 21 - 01/24/15 @ 08:26
+
+ernqq9a <Esc>d13|2eq4@qZZ
+
+0 comments - Comment
+#5 Petro Тrouq / @zulolosi - Score: 21 - 01/24/15 @ 12:32
+
+ernqz9a <Esc>d13|eeq4@zZZ
+
+@zulolosi: very annoying m char in Johm ! By the way, the command d17| delete characters from current column # (number position) to the 17 column #.
+
+1 comment - Comment
+#6 Matthieu Crapet / @mcr05 - Score: 22 - 01/24/15 @ 04:44
+
+ernqqwX11P15|dwwq4@qZZ

@@ -1,0 +1,2922 @@
+Start file
+
+   1
+  9 2
+ 8   3
+7 6 5 4
+
+End file
+
+   4
+  3 5
+ 2   6
+1 9 8 7
+
+View Diff
+http://www.vimgolf.com/challenges/53e1d5a0f201bc0002226501
+
+#1 - John Braxler / @braxler
+14
+08/06/2014 at 12:58PM
+
+#2 - Petro Тrouq / @zulolosi
+14
+08/06/2014 at 01:10PM
+
+...
+
+#11 - Siddhartha R Thota / @tweetingsid
+16
+08/11/2014 at 01:47AM
+-a-b-c-
+
+Put hyphens everywhere.
+Start file
+
+abcdefghijklm
+
+End file
+
+-a-b-c-d-e-f-g-h-i-j-k-l-m-
+
+View Diff
+Solutions
+
+The best way to learn is to practice. Below, you will find some of the solutions other golfers have entered. To unlock higher ranked solutions, submit your own entry which does as well or better than the solutions you can currently see - climb the ladder!
+
+Check out these helpful resources to improve your Vim skills... Game on.
+Unlock 17 remaining solutions by submitting a higher ranked entry
+#18 kli6891 / @kli6891 - Score: 13 - 09/09/14 @ 10:49
+
+:s/\n*/-/g<CR>ZZ
+
+0 comments - Comment
+#19 Kai Yuan / @kentyuan - Score: 14 - 09/03/14 @ 01:30
+
+qqi-<Right><ff-58>2lq7@qZZ
+
+@kentyuan: I don't like the <right>... but could not make 14 without it. :(
+
+@Dr4k3_LE: Could you give me a hint about the <ff-58>, please?
+
+@udioica: I don't like it either. I suspected there might be a working cursor key 14, but I didn't explore enough to find something this clever. Looks like I should have doen the whole alphabet to block the single digit repeat. ;) Anyway, with <C-O>a it's another 15.
+
+@kentyuan: @udioca, yes, <c-o> is nicer, but it was 15, <right> is 14...like my first comment..
+
+@kentyuan: it seems that <right> is right! :-D
+
+@udioica: I've been meaning to lobby for 2-stroke cursor keys... The challenge is broken, but not solved. Keep trying to solve it!
+
+@zulolosi: Nice ! <ff-58> key is Ctrl-@ (or Ctrl-2) combination: help i_CTRL-@ -> Insert previously inserted text and stop insert
+
+@Dr4k3_LE: @zulolosi, thx :)
+
+8 comments - Comment
+#20 John Braxler / @braxler - Score: 14 - 09/03/14 @ 05:40
+
+:s/\_A*/-/g<CR>ZZ
+
+#20 John Braxler / @braxler - Score: 14 - 09/03/14 @ 05:40
+
+:s/\_A*/-/g<CR>ZZ
+
+0 comments - Comment
+#21 Daniel Beck / @daniel_beck_il - Score: 14 - 09/04/14 @ 14:32
+
+:s/\_A*/-/g|x<CR>
+
+0 comments - Comment
+#22 Kerson Hsiao / @KersonHsiao - Score: 14 - 09/07/14 @ 20:25
+
+i-<Esc>s p<Esc>u13@.ZZ
+
+0 comments - Comment 
+===
+vimgolf put 540629666a1e4000020d9e5a
+
+#1 - Tim Chase / @gumnos
+13
+09/03/2014 at 01:00PM
+
+#2 - Urtica dioica / @udioica
+13
+09/03/2014 at 01:56PM
+
+...
+
+ #19 - Kai Yuan / @kentyuan
+ 09/03/2014 at 01:30AM
+
+attr_aligner
+
+Two attr keywords. Two separate indentations. Align the colons.
+Start file
+
+attr_reader :align, :variables, :with
+attr_accessor :spaces, :to, :complete, :challenge
+# vim: set expandtab:
+
+End file
+
+attr_reader :align,
+            :variables,
+            :with
+attr_accessor :spaces,
+              :to,
+              :complete,
+              :challenge
+# vim: set expandtab:
+
+===
+vimgolf put 524e1a20b81fe50002000008
+http://www.vimgolf.com/challenges/524e1a20b81fe50002000008
+
+
+19
+#1 - Tim Chase / @gumnos
+10/04/2013 at 12:16PM
+
+19
+#2 - Urtica dioica / @udioica
+10/04/2013 at 10:28PM
+
+...
+
+20
+#73 - StarkHalo / @hellektor
+10/05/2013 at 10:18PM
+Binary and Increment
+
+Some numbers fun: not only increasing numbers but also increasing binary.
+Start file
+
+3'b000: clk_out = clk_in0;
+3'b000: clk_out = clk_in0;
+3'b000: clk_out = clk_in0;
+3'b000: clk_out = clk_in0;
+3'b000: clk_out = clk_in0;
+3'b000: clk_out = clk_in0;
+3'b000: clk_out = clk_in0;
+3'b000: clk_out = clk_in0;
+
+End file
+
+3'b000: clk_out = clk_in1;
+3'b001: clk_out = clk_in2;
+3'b010: clk_out = clk_in3;
+3'b011: clk_out = clk_in4;
+3'b100: clk_out = clk_in5;
+3'b101: clk_out = clk_in6;
+3'b110: clk_out = clk_in7;
+3'b111: clk_out = clk_in8;
+
+View Diff
+==
+vimgolf put 549fc5c05874e9000220eb54
+http://www.vimgolf.com/challenges/549fc5c05874e9000220eb54
+Chinese Multiplication Table
+
+Print a Chinese multiplication table in Vim. In China, every kid is asked to memorize this table. And thanks to the mono-syllabism of Chinese characters, it is not that hard. Printing the multiplication table is also a good exercise for programming beginners. For-loop, escaped characters, etc... There should be some special ways to print it in Vim.
+Start file
+
+1*1=1
+
+End file
+
+1*1=1
+1*2=2 2*2=4
+1*3=3 2*3=6  3*3=9
+1*4=4 2*4=8  3*4=12 4*4=16
+1*5=5 2*5=10 3*5=15 4*5=20 5*5=25
+1*6=6 2*6=12 3*6=18 4*6=24 5*6=30 6*6=36
+1*7=7 2*7=14 3*7=21 4*7=28 5*7=35 6*7=42 7*7=49
+1*8=8 2*8=16 3*8=24 4*8=32 5*8=40 6*8=48 7*8=56 8*8=64
+1*9=9 2*9=18 3*9=27 4*9=36 5*9=45 6*9=54 7*9=63 8*9=72 9*9=81
+
+View Diff
+==
+http://vimgolf.com/challenges/510b1c61e48b7e0002000028
+vimgolf put 510b1c61e48b7e0002000028
+Comparing scores
+
+If Alice and Bob both did the challenge, put their entries together in the top
+paragraph, so we can compare their scores more easily.
+
+Start file
+
+
+4d1a34ccfa85f32065000004 Alice: 15 # Simple text editing with Vim
+4d1a8bf2b8cb3409320002c4 Alice: 12 # Search and Replace 0
+4d1cdb0635b40650b8000527 Alice: 16 # Make Fancy Header
+4d716c76919202611400002b Alice: 19 # Numbering a List
+4f0720c8f037090001000007 Alice: 11 # switch variable
+4fca29ddd3a0d40001000038 Alice: 8  # Remove semicolons after expressions
+50048db8cdc4060002000004 Alice: 22 # Vertical Limit
+508fe9f57acca60002000037 Alice: 13 # Stairs Indenting
+5192f96ad8df110002000002 Alice: 16 # Words in parens
+
+4d1a34ccfa85f32065000004 Bob: 13 # Simple text editing with Vim
+4d1a8bf2b8cb3409320002c4 Bob: 14 # Search and Replace 0
+4d1aaf2fb11838287d000036 Bob: 14 # Reverse characters in a line
+4d2c9d06eda6262e4e00007a Bob: 19 # Assignment Alignment
+4ef209ef78702b0001000019 Bob: 14 # Make it more readable
+4f0720c8f037090001000007 Bob: 11 # switch variable
+4fc9d767d3a0d4000100000e Bob: 12 # Append semicolon after expressions
+50048db8cdc4060002000004 Bob: 23 # Vertical Limit
+508fe9f57acca60002000037 Bob: 14 # Stairs Indenting
+5192f96ad8df110002000002 Bob: 15 # Words in parens
+
+End file
+
+4d1a34ccfa85f32065000004 Alice: 15 # Simple text editing with Vim
+4d1a34ccfa85f32065000004 Bob: 13 # Simple text editing with Vim
+4d1a8bf2b8cb3409320002c4 Alice: 12 # Search and Replace 0
+4d1a8bf2b8cb3409320002c4 Bob: 14 # Search and Replace 0
+4f0720c8f037090001000007 Alice: 11 # switch variable
+4f0720c8f037090001000007 Bob: 11 # switch variable
+50048db8cdc4060002000004 Alice: 22 # Vertical Limit
+50048db8cdc4060002000004 Bob: 23 # Vertical Limit
+508fe9f57acca60002000037 Alice: 13 # Stairs Indenting
+508fe9f57acca60002000037 Bob: 14 # Stairs Indenting
+5192f96ad8df110002000002 Alice: 16 # Words in parens
+5192f96ad8df110002000002 Bob: 15 # Words in parens
+
+4d1cdb0635b40650b8000527 Alice: 16 # Make Fancy Header
+4d716c76919202611400002b Alice: 19 # Numbering a List
+4fca29ddd3a0d40001000038 Alice: 8  # Remove semicolons after expressions
+
+4d1aaf2fb11838287d000036 Bob: 14 # Reverse characters in a line
+4d2c9d06eda6262e4e00007a Bob: 19 # Assignment Alignment
+4ef209ef78702b0001000019 Bob: 14 # Make it more readable
+4fc9d767d3a0d4000100000e Bob: 12 # Append semicolon after expressions
+
+View Diff
+
+===
+#1 - Urtica dioica / @udioica
+18
+08/21/2014 at 12:00AM
+
+#2 - John Braxler / @braxler
+18
+08/21/2014 at 06:58AM
+
+#3 - Petro Тrouq / @zulolosi
+20
+08/21/2014 at 09:51AM
+
+vimgolf put 53f44761ba79e3000235fc6f
+Condensed Cases
+
+Apple's new programming language, Swift, allows two style of case statements: 1) one Enum case on each line, or 2) multiple Enum cases on a single line. Convert the following from the first case (no pun intended) to the second type.
+Start file
+
+enum PlaybackRequestType {
+    case Next
+    case Previous
+    case Play
+    case Stop
+}
+
+End file
+
+enum PlaybackRequestType {
+    case Next, Previous, Play, Stop
+}
+
+View Diff
+==
+http://www.vimgolf.com/challenges/54698da795f6da00020d85ed
+vimgolf put 54698da795f6da00020d85ed
+Config Sections
+
+Section me!
+Start file
+
+SECTION1
+SECTION TWO
+SECTION THREE
+THIS IS ANOTHER SECTION
+
+End file
+
+##############################
+##         SECTION1         ##
+##############################
+
+##############################
+##       SECTION TWO        ##
+##############################
+
+##############################
+##      SECTION THREE       ##
+##############################
+
+##############################
+## THIS IS ANOTHER SECTION  ##
+##############################
+
+View Diff
+==
+vimgolf put 5474ef0bcf59b600024c64de
+http://www.vimgolf.com/challenges/5474ef0bcf59b600024c64de
+Start file
+
+one two three four five six seven eight nine ten eleven
+
+End file
+
+one two three four five six seven eight nine ten eleven
+two
+three
+four
+five
+six
+seven
+eight
+nine
+ten
+eleven
+C to VimDict
+
+Convert a C data structure to a Vimscript dictionary.
+Start file
+
+{ "Return", '\n', },
+{ "ampersand", '&', },
+{ "apostrophe", '\'', },
+{ "asciicircum", '^', },
+{ "asciitilde", '~', },
+{ "asterisk", '*', },
+{ "at", '@', },
+{ "backslash", '\\', },
+
+End file
+
+{
+\  "\n" : 'Return',
+\  "&"  : 'ampersand',
+\  "\'" : 'apostrophe',
+\  "^"  : 'asciicircum',
+\  "~"  : 'asciitilde',
+\  "*"  : 'asterisk',
+\  "@"  : 'at',
+\  "\\" : 'backslash',
+\}
+
+View Diff
+vimgolf put 54a94976f4048c00026d8ed6
+http://www.vimgolf.com/challenges/54a94976f4048c00026d8ed6
+Deleting folded text
+
+The text below contains three folds. Delete them (and the text inside them). For example: 123 456 /*{{{*/ 789 /*}}}*/ 012 Should become: 123 012 Also, add `aoeuaoeu` to make sure small solutions don't get flagged as cheating.
+
+Start file
+
+/* vim: set foldmethod=marker: */
+679
+196
+273
+094
+912
+132
+235
+859
+303
+989
+151
+012
+912
+279
+955
+000
+333
+383
+863
+009
+203
+382
+388
+506
+125
+858
+364
+344
+927
+961
+215
+856
+007
+116
+412
+535
+923
+656
+658
+396
+045
+800
+830
+923
+901
+571
+003
+296
+513
+721
+435
+617
+738
+332
+267
+987
+113
+415
+773
+460
+455
+737
+745
+510
+047
+010
+501
+617
+594
+867
+834
+722
+605
+348
+486
+862
+570
+026
+157
+127
+378
+291
+066
+228
+968
+296
+212
+522
+017
+345
+885
+628
+801
+417
+734
+934
+848
+973
+001
+678
+225
+941
+615
+340
+673
+549
+068
+083
+294
+271
+760
+992
+777
+005
+892
+373
+938
+976
+648
+140
+810
+135
+150
+705
+021
+318
+441
+983
+080
+699
+378
+886
+193
+510
+386
+113
+194
+168
+837
+823
+282
+394
+888
+896
+960
+728
+385
+094
+656
+275
+266
+311
+406
+944
+201
+663
+027
+534
+565
+260
+971
+794
+268
+602
+789
+651
+487
+906
+602
+945
+965
+951
+616
+211
+543
+068
+703
+580
+064
+164
+801
+228
+183
+672
+285
+985
+845
+567
+922
+232
+022
+889
+627
+146
+941
+097
+929
+936
+911
+178
+580  /*{{{*/
+667
+551
+619
+719
+760
+854
+627
+603
+912
+055
+167
+988
+543
+241
+573
+782
+201
+707
+427
+871
+614
+956
+300
+967
+473
+824
+512
+110
+161
+923
+293
+846
+926
+414
+478
+459
+927
+511
+689
+592
+062
+884
+260
+138
+314
+591
+968
+607
+877
+764
+890
+634
+920
+385
+645
+744
+843
+309
+178
+842
+645
+930
+215
+531
+935
+932
+705
+952
+151
+970
+931
+854
+209
+754
+315
+223
+243
+452
+165
+809
+225
+599
+979
+290
+108
+323
+476
+597
+613
+758
+186
+401
+283
+556
+234
+027
+105
+848
+478
+811  /*}}}*/
+575
+959
+081
+667
+261
+988
+881
+161
+932
+304
+739
+371
+554
+195
+187
+378
+424
+479
+869
+488
+956
+249
+039
+111
+535
+822
+358
+419
+730
+126
+528
+846
+209
+438
+190
+643
+496
+252
+468
+152
+799
+308
+092
+924
+528
+551
+637
+108
+632
+010
+676
+680
+249
+435
+930
+957
+066
+599
+124
+501
+706
+849
+733
+220
+205
+355
+157
+389
+989
+250
+496
+935
+241
+835
+416
+321
+898
+866
+293
+018
+892
+946
+387
+827
+331
+435
+330
+431
+776
+130
+416
+216
+219
+240
+507
+790
+869
+975
+651
+785
+806  /*{{{*/
+709
+177
+827
+087
+863
+585
+837
+447
+728
+459
+256
+899
+900
+047
+117
+260
+229
+847
+954
+271
+903
+765
+802
+596
+315
+583
+590
+363
+576
+630
+292
+383
+163
+420
+183
+359
+961
+051
+325
+823
+024
+951
+050
+074
+423
+915
+744
+747
+817
+388
+882
+207
+202
+188
+614
+451
+991
+328
+397
+059
+564
+150
+076
+962
+528
+455
+151
+113
+064
+064
+154
+313
+924
+759
+688
+526
+591
+349
+019
+710
+119
+417
+009
+534
+652
+469
+133
+698
+266
+290
+482
+023
+285
+648
+266
+139
+408
+041
+169
+104  /*}}}*/
+545
+215
+439
+434
+171
+376
+297
+049
+857
+922
+573
+422
+193
+186
+922
+089
+825
+159
+364
+168
+444
+989
+947
+096
+393
+938
+195
+127
+411
+905
+501
+686
+391
+181
+121
+714
+084
+942
+212
+720
+265
+895
+328
+793
+276
+118
+841
+297
+543
+276
+246
+946
+154
+842
+932
+054
+137
+562
+804
+165
+273
+112
+019
+658
+652
+696
+870
+514
+997
+721
+995
+141
+619
+722
+440
+167
+163
+339
+953
+043
+032
+880
+636
+223
+460
+808
+929
+215
+136
+121
+793
+460
+186
+193
+377
+842
+952
+994
+394
+453
+299  /*{{{*/
+036
+497
+877
+169
+865
+288
+216
+299
+950
+048
+595
+421
+568
+574
+188
+049
+480
+575
+990
+301
+616
+716
+483
+333
+870
+584
+544
+726
+483
+918
+730
+800
+078
+978
+537
+737
+194
+737
+995
+402
+875
+048
+948
+641
+931
+309
+921
+901
+611
+867
+506
+362
+534
+570
+724
+025
+482
+145
+058
+436
+917
+382
+261
+464
+104
+432
+063
+799
+057
+482
+518
+451
+236
+861
+902
+989
+476
+807
+993
+318
+448
+240
+476
+409
+262
+469
+404
+104
+353
+798
+829
+258
+349
+016
+567
+552
+395
+264
+927
+433  /*}}}*/
+335
+404
+930
+040
+610
+297
+463
+393
+557
+523
+216
+689
+608
+153
+776
+163
+396
+618
+027
+469
+052
+291
+867
+705
+512
+104
+181
+741
+195
+416
+149
+535
+321
+543
+521
+827
+659
+169
+883
+621
+274
+914
+961
+887
+266
+431
+589
+383
+647
+414
+196
+224
+506
+609
+566
+396
+846
+808
+112
+483
+972
+083
+420
+253
+745
+450
+727
+973
+765
+892
+391
+214
+244
+671
+177
+210
+414
+618
+491
+104
+604
+252
+967
+080
+649
+019
+410
+143
+312
+529
+903
+723
+738
+449
+955
+387
+906
+079
+506
+584
+End file
+
+/* vim: set foldmethod=marker: */
+aoeuaoeu
+679
+196
+273
+094
+912
+132
+235
+859
+303
+989
+151
+012
+912
+279
+955
+000
+333
+383
+863
+009
+203
+382
+388
+506
+125
+858
+364
+344
+927
+961
+215
+856
+007
+116
+412
+535
+923
+656
+658
+396
+045
+800
+830
+923
+901
+571
+003
+296
+513
+721
+435
+617
+738
+332
+267
+987
+113
+415
+773
+460
+455
+737
+745
+510
+047
+010
+501
+617
+594
+867
+834
+722
+605
+348
+486
+862
+570
+026
+157
+127
+378
+291
+066
+228
+968
+296
+212
+522
+017
+345
+885
+628
+801
+417
+734
+934
+848
+973
+001
+678
+225
+941
+615
+340
+673
+549
+068
+083
+294
+271
+760
+992
+777
+005
+892
+373
+938
+976
+648
+140
+810
+135
+150
+705
+021
+318
+441
+983
+080
+699
+378
+886
+193
+510
+386
+113
+194
+168
+837
+823
+282
+394
+888
+896
+960
+728
+385
+094
+656
+275
+266
+311
+406
+944
+201
+663
+027
+534
+565
+260
+971
+794
+268
+602
+789
+651
+487
+906
+602
+945
+965
+951
+616
+211
+543
+068
+703
+580
+064
+164
+801
+228
+183
+672
+285
+985
+845
+567
+922
+232
+022
+889
+627
+146
+941
+097
+929
+936
+911
+178
+575
+959
+081
+667
+261
+988
+881
+161
+932
+304
+739
+371
+554
+195
+187
+378
+424
+479
+869
+488
+956
+249
+039
+111
+535
+822
+358
+419
+730
+126
+528
+846
+209
+438
+190
+643
+496
+252
+468
+152
+799
+308
+092
+924
+528
+551
+637
+108
+632
+010
+676
+680
+249
+435
+930
+957
+066
+599
+124
+501
+706
+849
+733
+220
+205
+355
+157
+389
+989
+250
+496
+935
+241
+835
+416
+321
+898
+866
+293
+018
+892
+946
+387
+827
+331
+435
+330
+431
+776
+130
+416
+216
+219
+240
+507
+790
+869
+975
+651
+785
+545
+215
+439
+434
+171
+376
+297
+049
+857
+922
+573
+422
+193
+186
+922
+089
+825
+159
+364
+168
+444
+989
+947
+096
+393
+938
+195
+127
+411
+905
+501
+686
+391
+181
+121
+714
+084
+942
+212
+720
+265
+895
+328
+793
+276
+118
+841
+297
+543
+276
+246
+946
+154
+842
+932
+054
+137
+562
+804
+165
+273
+112
+019
+658
+652
+696
+870
+514
+997
+721
+995
+141
+619
+722
+440
+167
+163
+339
+953
+043
+032
+880
+636
+223
+460
+808
+929
+215
+136
+121
+793
+460
+186
+193
+377
+842
+952
+994
+394
+453
+335
+404
+930
+040
+610
+297
+463
+393
+557
+523
+216
+689
+608
+153
+776
+163
+396
+618
+027
+469
+052
+291
+867
+705
+512
+104
+181
+741
+195
+416
+149
+535
+321
+543
+521
+827
+659
+169
+883
+621
+274
+914
+961
+887
+266
+431
+589
+383
+647
+414
+196
+224
+506
+609
+566
+396
+846
+808
+112
+483
+972
+083
+420
+253
+745
+450
+727
+973
+765
+892
+391
+214
+244
+671
+177
+210
+414
+618
+491
+104
+604
+252
+967
+080
+649
+019
+410
+143
+312
+529
+903
+723
+738
+449
+955
+387
+906
+079
+506
+584
+
+===
+vimgolf put 4d1a87fcb8cb340932000290
+http://vimgolf.com/challenges/4d1a87fcb8cb340932000290
+
+---
+17
+#1 - Jimmy Mabey / @mabeyj
+01/23/2013 at 05:27PM
+
+17
+#2 - John Braxler / @braxler
+06/02/2014 at 05:20AM
+
+18
+#3 - Rod Knowlton / @codelahoma
+Don't know what this is
+
+Replace contents of brackets with matching number of spaces. Don't ask what the
+format's supposed to be.
+
+Start file
+
+[1:0]
+[0:1]
+[1:100]
+[0:100]
+
+End file
+
+[   ]
+[   ]
+[     ]
+[     ]
+
+#1 - Tim Chase / @gumnos
+11
+07/16/2014 at 01:52PM
+
+#2 - Urtica dioica / @udioica
+11
+07/16/2014 at 02:03PM
+
+#5 - John Meisner / @jmeisned
+12
+07/16/2014 at 07:17AM
+
+vimgolf put 53c66c482b4166000226bbee
+Start file
+
+attr("y",function(v){return v})
+
+End file
+
+f=function(v){return v};
+attr("y",f)
+
+===
+vimgolf put 536cfa23fcccd100025678bd
+http://vimgolf.com/challenges/536cfa23fcccd100025678bd
+
+---
+13
+#1 - Urtica dioica / @udioica
+05/09/2014 at 09:35AM
+
+13
+#2 - Yann Moisan / @YannMoisan
+05/09/2014 at 12:41PM
+
+13
+#3 - Tim Chase / @gumnos
+05/09/2014 at 01:30PM
+Gray area
+
+It's a golf metaphor or something.
+Start file
+
+a_golf_ball - > - > - > - > |___________| -
+
+End file
+
+            - > - > - > - > |a_golf_ball| -
+
+View Diff
+===
+vimgolf put 5447b459380e8b0002000db3
+http://www.vimgolf.com/challenges/5447b459380e8b0002000db3
+Hole-in-one
+
+Lets take this golf thing literally.. Drive off the tee into the hole, and of course you don't strike the ball completely clean.
+
+Start file
+
+    
+        o
+        |
+
+
+                                     |>
+                                     |
+                                    ( )
+
+End file
+
+    
+        
+        
+          _
+
+                                     |>
+                                     |
+                                    (o)
+
+vimgolf put 51e023f92b2f6d0002000066
+http://vimgolf.com/challenges/51e023f92b2f6d0002000066
+
+---
+15
+#1 - Emil Soman / @emilsoman
+06/02/2014 at 12:43PM
+
+16
+#2 - Bradd Szonye / @bszonye
+07/12/2013 at 08:04PM
+
+16
+#3 - Urtica dioica / @udioica
+07/12/2013 at 08:17PM
+Start file
+
+<table>
+<thead>
+<th>
+<th id="first_name">First Name</th>
+<th id="last_name">Last Name</th>
+<th id="address">Address</th>
+<th id="city">City</th>
+<th id="state">State</th>
+<th id="zip_postal">Zip</th>
+<th id="country">Country</th>
+<th id="phone">Phone</th>
+</th>
+</thead>
+</table>
+
+End file
+
+<table>
+        <thead>
+                <th>
+                <th id="first_name"> First Name</th>
+                <th id="last_name "> Last Name </th>
+                <th id="address   "> Address   </th>
+                <th id="city      "> City      </th>
+                <th id="state     "> State     </th>
+                <th id="zip_postal"> Zip       </th>
+                <th id="country   "> Country   </th>
+                <th id="phone     "> Phone     </th>
+                </th>
+        </thead>
+</table>
+
+===
+vimgolf put 537a553282aa3e000222048a
+http://vimgolf.com/challenges/537a553282aa3e000222048a
+
+
+33
+#1 - Urtica dioica / @udioica
+05/19/2014 at 02:18PM
+
+33
+#2 - wizardwerdna / @wizardwerdna
+05/19/2014 at 09:05PM
+
+33
+#3 - John Braxler / @braxler
+05/20/2014 at 09:15AM
+I forgot quotes
+
+Oops.
+Start file
+
+foo = a
+      ab
+      abc
+
+End file
+
+foo = "a"
+      "ab"
+      "abc"
+
+View Diff
+vimgolf put 5462e3f41198b80002512673
+http://www.vimgolf.com/challenges/5462e3f41198b80002512673
+It's a factor
+
+Flaunt your macro prowess by factoring some numbers. Too hard? It takes less than 30 strokes, I promise.
+Start file
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+End file
+
+1
+1 2
+1 3
+1 2 4
+1 5
+1 2 3 6
+1 7
+1 2 4 8
+1 3 9
+1 2 5 10
+1 11
+1 2 3 4 6 12
+1 13
+1 2 7 14
+1 3 5 15
+1 2 4 8 16
+1 17
+1 2 3 6 9 18
+1 19
+1 2 4 5 10 20
+
+View Diff
+==
+http://vimgolf.com/challenges/51459ef6b94aa50002000002
+vimgolf put 51459ef6b94aa50002000002
+http://udioica.blogspot.de/2013/11/its-factor-plus-little-prime-numbers.html
+Start file
+
+double[] c = 
+{
+        112.2, 102, 12, 954, 39.43,
+        49.4, 2224.6, 94, 123,
+        4929.55, 12, 98, 91.22
+};
+
+End file
+
+List<Double> c = new ArrayList<Double>();
+c.add(112.2);
+c.add(102d);
+c.add(12d);
+c.add(954d);
+c.add(39.43);
+c.add(49.4);
+c.add(2224.6);
+c.add(94d);
+c.add(123d);
+c.add(4929.55);
+c.add(12d);
+c.add(98d);
+c.add(91.22);
+
+===
+vimgolf put 4d665abd7d73e02a55000009
+http://udioica.blogspot.de/2013/01/java-array2list.html
+
+#1 - Urtica dioica / @udioica
+67
+01/06/2013 at 07:48PM
+
+#2 - Petro Тrouq / @zulolosi
+67
+07/10/2013 at 07:19PM
+
+...
+
+73
+#4 - You-Siang Lin / @yslinnctu
+11/29/2011 at 02:09AM
+Just the middle
+
+Delete the instructions at the top and bottom.
+Start file
+
+Leave only the
+numbered lines.
+LINE 1
+LINE 2
+LINE 3
+That's all.
+Thank you
+very much.
+
+End file
+
+LINE 1
+LINE 2
+LINE 3
+
+View Diff
+==
+vimgolf put 54862fbb3f90ac0002904cf5
+http://www.vimgolf.com/challenges/54862fbb3f90ac0002904cf5
+Start file
+
+\begin{}[]
+setlength itemsep -parsep
+% %%%%%
+     acro cct  ] Currency Carry Trade
+     acro cip  ] Covered Interest Rate Parity
+     acro cirp  ] Covered Interest Rate Parity
+     acro ct  ] Carry Trade
+     acro fdbh  ] Forward Discount Bias Hypothesis
+     acro fdb  ] Forward Discount Bias
+     acro fdp  ] Forward Discount Puzzle
+     acro fdr  ] Forward Discount Rates
+     acro uip  ] Uncovered Interest-Rate Parity
+\end{}
+
+End file
+
+\begin{acronym}[AAAAAAAA]
+    \setlength{\itemsep}{-\parsep}
+    % %%%%%
+    % Acronyms
+    % %%%%%
+
+    \acro{cct}[CCT]{Currency Carry Trade}
+    \acro{cip}[CIP]{Covered Interest Rate Parity}
+    \acro{cirp}[CIP]{Covered Interest Rate Parity}
+    \acro{ct}[CT]{Carry Trade}
+    \acro{fdbh}[FDBH]{Forward Discount Bias Hypothesis}
+    \acro{fdb}[FDB]{Forward Discount Bias}
+    \acro{fdp}[FDP]{Forward Discount Puzzle}
+    \acro{fdr}[FDR]{Forward Discount Rates}
+    \acro{uip}[UIP]{Uncovered Interest-Rate Parity}
+
+\end{acronym}
+Letter case trickery
+
+This file is in a downright esoteric format, consisting of hexadecimal numbers,
+non-hexadecimal keywords, and "Z" indicating end-of-line. Make the hexadecimal
+numbers lowercase.
+
+Start file
+
+A4E SUM 3C0Z
+2B A9 NE F2Z
+
+End file
+
+a4e SUM 3c0Z
+2b a9 NE f2Z
+
+===
+vimgolf put 52222f6ea98cbe0002000078
+http://www.vimgolf.com/challenges/52222f6ea98cbe0002000078
+
+
+10
+#1 - Urtica dioica / @udioica
+08/31/2013 at 04:52PM
+
+10
+#2 - Bunwut Tson / @NbTson
+08/31/2013 at 04:58PM
+
+10
+#3 - Stephen Drodge / @sjdrodge
+08/31/2013 at 06:40PM
+NBCU Weekly Challenge - #0
+
+One of our favorites lines here at NBCU! p.s. The first version of #0 was
+deleted due to me copy/pasting a HTML entity. Congrats to the one who figured
+that out, you are a true ninja warrior!
+Start file
+
+Mosst importantly, where making the world an better place through constructing elegant heirarchies for mimimun code reuse and extensibility?
+
+End file
+
+Most importantly, we're making the world a better place through constructing elegant hierarchies for maximum code reuse and extensibility.
+
+View Diff
+
+
+===
+
+#1 - Urtica dioica / @udioica
+30
+08/19/2014 at 11:57AM
+
+#2 - Marco Biasini / @biasmv
+30
+08/19/2014 at 12:11PM
+
+...
+
+#9 - James / @Dronak
+33
+08/19/2014 at 04:23PM
+
+vimgolf put 53f388dfb2a65900028494ae
+Neither Fizz nor Buzz
+
+Not your regular increment macro! The gaps are tricky.
+
+Start file
+
+0
+0
+Fizz
+0
+Buzz
+Fizz
+0
+0
+Fizz
+Buzz
+0
+Fizz
+0
+0
+FizzBuzz
+
+End file
+
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+
+#1 - Tim Chase / @gumnos
+15
+07/10/2014 at 04:46PM
+
+#2 - Urtica dioica / @udioica
+15
+07/10/2014 at 05:06PM
+
+...
+
+#6 - Carlos López / @morrizon
+16
+07/11/2014 at 07:24AM
+
+===
+vimgolf put 53bddd87dbd3db0002c48c0f
+http://vimgolf.com/challenges/53bddd87dbd3db0002c48c0f
+Pretty format for variable declarations
+
+Project standards demand the equal signs must be aligned for better readability.
+Start file
+
+var parser = require('../src/grammar.js'),
+    src = require('../src/blueberry.js'),
+    fs = require('fs'),
+    glob = require('glob');
+
+End file
+
+var parser = require('../src/grammar.js'),
+    src    = require('../src/blueberry.js'),
+    fs     = require('fs'),
+    glob   = require('glob');
+
+View Diff
+==
+http://www.vimgolf.com/challenges/546a627195f6da000265742d
+vimgolf put 546a627195f6da000265742d
+Start file
+
+import org.Assert;
+
+C{
+        m(){
+                Assert.assertEquals(42, "Meaning of life");
+        }
+}
+
+End file
+
+import static org.Assert.assertEquals;
+
+C{
+        m(){
+                assertEquals("Meaning of life", "Meaning of life");
+        }
+}
+
+View Diff
+===
+http://www.vimgolf.com/challenges/542eff6588fc4d00021aa9cd
+vimgolf put 542eff6588fc4d00021aa9cd
+Start file
+
+Surname         Approx Number   % Frequency     Rank
+SMITH    2,501,922      1.006   1
+JOHNSON  2,014,470      0.81    2
+WILLIAMS         1,738,413      0.699   3
+JONES    1,544,427      0.621   4
+BROWN    1,544,427      0.621   5
+DAVIS    1,193,760      0.48    6
+MILLER   1,054,488      0.424   7
+WILSON   843,093        0.339   8
+MOORE    775,944        0.312   9
+TAYLOR   773,457        0.311   10
+
+End file
+
+1. Smith
+2. Johnson
+3. Williams
+4. Jones
+5. Brown
+6. Davis
+7. Miller
+8. Wilson
+9. Moore
+10. Taylor
+
+#1 - Urtica dioica / @udioica
+06/11/2012 at 05:19PM
+
+23
+#2 - Charles Gordon / @liberalbias
+08/25/2012 at 04:09PM
+
+23
+#3 - Conner McDaniel / @connermcd
+09/18/2012 at 01:20PM
+
+===
+vimgolf put 4d1a790fb8cb3409320001a8
+http://vimgolf.com/challenges/4d1a790fb8cb3409320001a8
+
+Roman numerals
+
+Use the substitutions on top to convert unary to Roman numerals.
+Start file
+
+IIIII,V
+IIII,IV
+VV,X
+VIV,IX
+XXXXX,L
+XXXX,XL
+
+III
+IIII
+IIIII
+IIIIIII
+IIIIIIIII
+IIIIIIIIII
+IIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ vim: set gdefault:
+
+End file
+
+IIIII,V
+IIII,IV
+VV,X
+VIV,IX
+XXXXX,L
+XXXX,XL
+
+III
+IV
+V
+VII
+IX
+X
+XVIII
+XXI
+XXXIX
+XL
+XLIV
+L
+LXIV
+ vim: set gdefault:
+
+View Diff
+Start file
+
+Johm Smith
+Mary Gold
+Alfred Quinn
+Michal Jackson
+Zeeshan Jan
+
+End file
+
+John          Smith
+Mary          Gold
+Alfred        Quinn
+Michal        Jackson
+Zeeshan       Jan
+
+View Diff
+1: 19
+2: 20
+3: 21
+12: 33
+Shift down
+
+Number words are back.
+Start file
+
+one two three
+
+four five six
+
+seven eight nine
+
+End file
+
+one
+    two
+        three
+
+four
+     five
+          six
+
+seven
+      eight
+            nine
+
+View Diff
+http://www.vimgolf.com/challenges/54514fd7238fe900021e7c42
+vimgolf put 54514fd7238fe900021e7c42
+Do you demand a shrubbery?
+
+Use :redir and crush the emacsgolfers.
+Start file
+
+:Ni!
+
+End file
+
+:Ni!
+
+
+Do you demand a shrubbery?
+
+===
+vimgolf put 53b473a3ac0ceb00022303bd
+http://vimgolf.com/challenges/53b473a3ac0ceb00022303bd
+
+
+17
+#1 - Kerson Hsiao / @KersonHsiao
+07/02/2014 at 10:31PM
+
+17
+#2 - Adit Cahya Ramadhan / @aditcr8
+07/03/2014 at 12:08AM
+
+17
+#3 - Pasha Klets / @p01nt
+07/03/2014 at 12:09AM
+Shuffle puzzle
+
+Sort the lines in each indent group, and sort the groups. That's the pattern.
+Or just move lines around manually to get a better score.
+
+Start file
+
+3
+        4
+        2
+1
+        3
+        1
+2
+        5
+        8
+
+End file
+
+1
+        1
+        3
+2
+        5
+        8
+3
+        2
+        4
+
+===
+vimgolf put 53ab5ade4367c700025ce66a
+http://www.vimgolf.com/challenges/53ab5ade4367c700025ce66a
+
+
+#1 - Adit Cahya Ramadhan / @aditcr8
+13
+06/25/2014 at 06:26PM
+
+#2 - Urtica dioica / @udioica
+13
+06/25/2014 at 07:42PM
+
+...
+
+#15 - John Meisner / @jmeisned
+14
+06/25/2014 at 07:06PM
+
+Simple Maths
+
+Not much to say, discover by yourself!
+Start file
+
+1
+37
+456
+1013
+498934
+26456821
+1658
+168813
+3574
+6557
+815
+147
+65465456
+
+End file
+
+41
+12
+14
+23
+19
+27
+20
+34
+37
+5
+15
+10
+1
+
+View Diff
+==
+http://www.vimgolf.com/challenges/547dae4372572300022c560e
+vimgolf put 547dae4372572300022c560e
+Simple text editing with Vim
+
+Make the pairs of lines match up by making each second line same as first
+
+Start file
+
+Make the pairs of lines match up by making each second line same as first:
+
+# Appending text:
+The name "Vim" is an acronym for "Vi IMproved"
+The name "Vim" is an acronym for
+
+# Editing text:
+Vim is a text editor originally released by Bram Moolenaar in 1991 for the Amiga
+Trivia: Vim is a text editor released by Bram Moolenaar in 1991 for the Amiga
+
+# Deleting text:
+Vim has a vi compatibility mode
+Vim has a vi compatibility mode but when not in this mode Vim has many enhancements over vi
+
+End file
+
+Make the pairs of lines match up by making each second line same as first:
+
+# Appending text:
+The name "Vim" is an acronym for "Vi IMproved"
+The name "Vim" is an acronym for "Vi IMproved"
+
+# Editing text:
+Vim is a text editor originally released by Bram Moolenaar in 1991 for the Amiga
+Vim is a text editor originally released by Bram Moolenaar in 1991 for the Amiga
+
+# Deleting text:
+Vim has a vi compatibility mode
+Vim has a vi compatibility mode
+
+vimgolf put 4d1a34ccfa85f32065000004
+http://vimgolf.com/challenges/4d1a34ccfa85f32065000004
+
+---
+13
+#1 - Antony Scriven / @antonyscriven
+02/09/2011 at 11:03AM
+
+13
+#2 - Pasha Klets / @p01nt
+03/19/2011 at 01:46AM
+
+13
+#3 - Frederik Mogensen / @fmogensen
+03/31/2011 at 04:07AM
+Suffix sort
+
+Sort from the end of the line, as if the letters in each line were reversed.
+Start file
+
+adjutants
+ametropic
+audiobook
+blockable
+demagogic
+embryotic
+excusable
+garroters
+housesits
+labellers
+opacifier
+proofroom
+quercetin
+rejudging
+supremely
+
+End file
+
+demagogic
+ametropic
+embryotic
+blockable
+excusable
+rejudging
+audiobook
+proofroom
+quercetin
+opacifier
+labellers
+garroters
+housesits
+adjutants
+supremely
+
+View Diff
+vimgolf put 53fdb108658ede0002599a8f
+
+ #1 - Caek / @Caek_
+27
+08/27/2014 at 04:46AM
+
+#2 - Guillaume Seren / @guillaumeseren
+27
+08/27/2014 at 04:59AM
+:so<Tab>/.$/r<CR>ddp9jddGPkdd2kPZZ
+
+switch variable
+
+how fast can you switch two variable ?
+Start file
+
+int barins, foovariable = 1; 
+
+End file
+
+int foovariable, barins = 1; 
+
+===
+vimgolf put 4f0720c8f037090001000007
+That hyphen
+
+"vim vi improved"
+Start file
+
+(vim -
+vi
+improved)
+(vim
+vi
+improved)
+
+End file
+
+vim vi improved
+(vim -
+vi
+improved)
+(vim
+vi
+improved)
+
+View Diff
+==
+vimgolf put 54345d14d529ef0002227d4c
+http://www.vimgolf.com/challenges/54345d14d529ef0002227d4c
+vim1001
+
+change number 1001 into a "vim1001 sequence". (My first challenge, hope it is not too bad... )
+Start file
+
+1001
+
+End file
+
+vim1001
+vim1005
+vim1011
+vim1015
+vim1021
+vim1025
+vim1031
+vim1035
+vim1041
+vim1045
+
+View Diff
+
+Leaderboard (lowest score wins):
+#1 - John Braxler / @braxler
+21
+8ig-egq0_normal
+
+#2 - Kai Yuan / @kentyuan
+21
+1sy_gzdz_normal
+
+...
+
+23
+#6 - Eduardo / @earada
+09/16/2014 at 03:28AM
+# vim: syntax=on:fdm=marker:rnu
+----------------------------
+-  Abusing Macros: Part 1  -
+----------------------------
+# {{{
+
+Abusing macros part 1
+http://www.reddit.com/r/vimgolf/comments/wmtep/abusing_macros_part_1_normal/
+
+First post. Hopefully I'll expand to other types of macros and Vim features in
+other posts. I'll start with :normal, because 1) it's so different from the
+other ways of doing macros, and 2) no one other than me, to date, has ever used
+it right.
+
+**Overhead**
+
+From normal mode, the standard way to write a :normal that acts on every line
+is :%no<S-Tab> with <CR> at the end. That's six strokes of basically mandatory
+overhead. Compare to qqq9@q for a single-digit recorded macro repeat, which is
+also six, or 9@=""<CR> at six for a single-digit expression register macro.
+
+**The Range**
+
+Usually, you'll use % as your range, to run the macro on every line. The great
+thing about % is you can run your macro on 10s or 100s of lines without having
+to type extra digits, which might save you strokes compared to other macros.
+You might use 9:normal for a repeat starting at the current line, but that's
+rare. Using a multi-stroke range, like 10:normal or :1,normal, is possible but
+probably wastes too many strokes.
+
+:normal without a range runs once from the cursor position. But that's
+pointless. With a range, it starts on every line in turn from column 1, where
+0, |, or _ would take you, before the indent.
+
+Say you used % as a range and your :normal adds lines. How many times does it
+run? As many times as there were lines in the file before. Say you had a file:
+
+	foo
+	bar
+	baz
+
+and you run :%no<S-Tab> Yp<CR> Your file is now:
+
+	foo
+	foo
+	foo
+	foo
+	bar
+	baz
+
+After doing line 1, % moved on to line 2, which is now the same as line 1. It
+ran for every line number that used to be in the file.
+
+What if you used 4:normal instead? There is no line 4. That's an illegal range.
+There's no way to repeat :normal more times than lines in the file.
+
+Most of the time, moving onto the next line is like a free + at the end of your
+macro. That's pretty sweet. But if you're moving around the file, it'll still
+bring you to the line after the one you started on, and that can be even
+better.
+
+**The Space**
+
+In that Yp example, I had to use a space after :normal. That's because there's
+no such thing as a :normalYp command. But like other : commands, if your
+argument starts with a digit, punctuation, or even a control character, you can
+skip the space. If you can rearrange the macro to avoid a letter, a space, or a
+control character that triggers completion at the front, you can avoid the
+extra stroke of overhead.
+
+**Escape**
+
+In a regular macro, if you end in insert mode, you end in insert mode. With
+:normal, you get automatically escaped out, saving a stroke. If you need an
+escape in the middle of the command line, you have to use <C-V> to escape the
+escape. So try to move your inserting to the end.
+
+**Special strokes**
+
+Some control characters work without <C-V>. Notably, <C-X> works anywhere, but
+<C-A> triggers a useless completion at the beginning, but works fine anywhere
+else. Maybe you can get some leverage out of <C-O> if you're jumping around, or
+if you need a quick command in insert mode without using <C-V><Esc>.
+
+<CR> is a special case. It would obviously run your command if you typed it
+directly, but <C-@> fills in and behaves like <CR> in every mode. So you can
+run other : commands or searches with no extra overhead.
+
+Arrow keys just don't work.
+
+**Filters**
+
+This is really powerful. With you run a regular macro and hit an error, it just
+stops. Doesn't finish, doesn't run again. When :normal hits an error, it stops
+running for that line and moves onto the next. This means you can run commands
+only on lines that fit a pattern. For example, if you use <C-A> or <C-X> and
+there are no digits in the rest of the line, the rest of your commands are
+skipped, so they only run on lines with digits. Also works great with f and t.
+
+**ex mode**
+
+There are some differences if you've Q'ed into ex mode. :normal still runs
+fine, but there's no completion, so you have to write Qnorm instead of
+:no<S-Tab> for one extra stroke. Most control characters work better here, like
+<C-A> at the beginning of the line, <Esc>, or <C-R>. Notably though, <C-@> no
+longer enters anything, so you can't use it as a replacement for <CR>. You'll
+have to use <C-V><CR>.
+
+**Summary**
+
+Consider :normal if:
+
+
+* your macro needs to run once a line, and you want to skip the + at the end
+* your macro skips around, and you want to come back to the line after you
+started without a jump or a mark
+* you can avoid a letter or space at the start, and therefore skip the space after :normal
+* you can make just one trip to insert mode, and it can go at the end, to avoid the <Esc>
+* you need a filter, so your commands only run on lines that fit a basic pattern
+* you don't need any arrow keys, and have no/limited need for control characters that have functions on the command line
+
+**Comments**
+
+[–][deleted] 2 Punkte 1 Jahr zuvor (2|0)
+
+Nice writeup.
+
+Does :no work on your setup? I can't go beyond :norm because :no and :nor are interpreted as :noremap.
+
+
+[–]udioica [S] 1 Punkt 1 Jahr zuvor (1|0)
+
+Thanks for the compliment.
+
+If you read the help file, :normal is listed as :norm[al]. That notation is
+used for all the colon commands. The letters in brackets are the ones that can
+be "officially" skipped. In practice, you can use <Tab> and <S-Tab> to complete
+a command, sometimes saving strokes. The quickest way to write :normal is
+:no<S-Tab>, which is a stroke faster than :norm. <S-Tab> doesn't work on every
+terminal, e.g. I have to detach screen to use it.
+
+However, command completion doesn't work in ex mode or in a macro. In those
+cases, you have to write out :norm.
+
+
+[–][deleted] 1 Punkt 1 Jahr zuvor (1|0)
+
+OK. I forgot for a second that your post was to be read in the context of vimgolf.
+
+I've used <S-Tab> many times when in the menu but I never thought about
+invoking that way. Cunning move.
+
+
+[–]udioica [S] 1 Punkt 1 Jahr zuvor (1|0)
+
+Just an addendum, in case you want to see :normal in use. There are (currently)
+six challenges where, as far as I can tell, this is the only way to drop the
+final strokes. I'll spoiler tag them, in case you want to find out for
+yourself.
+
+    Table Reshuffle[1]
+    http://vimgolf.com/challenges/4d1bfa8fb2c3e06468000127
+    ./chall_table_reshuffle.vg
+
+    Reformat most common surnames[2]
+    http://vimgolf.com/challenges/4d1a790fb8cb3409320001a8
+
+    Java Array2List[3]
+    http://vimgolf.com/challenges/4d665abd7d73e02a55000009
+
+    Align it, win it.[4]
+
+    Prime Numbers[5]
+    http://vimgolf.com/challenges/4d1c27940e3d7832db000010
+
+    Convert pandoc unordered list to a numbered list[6]
+    http://vimgolf.com/challenges/500855e60599d90002000073
+
+# }}}
+----------------------------
+-  Abusing Macros: Part 2  -
+----------------------------
+# {{{
+Abusing macros part 2
+http://www.reddit.com/r/vimgolf/comments/x049u/abusing_macros_part_2_the_macro/
+
+
+Recursively Palindrome
+######################
+
+# ./chall_recursively_palindrome.vg
+# vimgolf put 4d6f45b938c0aa691b000003
+# http://vimgolf.com/challenges/4d6f45b938c0aa691b000003
+
+# Cabcdef<Home>ld^Plp<Esc>u5@.ZZ [23]
+# Lesson 1: You can use arrow keys/Home/End to stop writing the ". register
+# without actually escaping. You can confirm this by hitting C-A before and
+# after. This is not only good for "copy-pasting" text to use later in the edit;
+# it also lets you "piggy-back" off a previous edit when preparing a @. macro,
+# essentially compressing <Esc>i into one stroke. Note also that undo recognized
+# 2 different edits, and only undid the 2nd.  Lesson 2: Note how the piggy-back
+# stroke (Home this time) also removes the need for ^ after adding the letters.
+# Not only did Home stop writing ". so it can be rewritten, but it also let me
+# skip an extra cursor movement.
+
+
+
+Solve the Sokoban
+#################
+
+# ./chall_solve_the_sobokan.vg
+# vimgolf put 4d2061daf1a3f252f4000087
+# http://vimgolf.com/challenges/4d2061daf1a3f252f4000087#4ff64184499226000100001f
+
+# jlR@|><Down>?[0^?]<CR>r.<Esc>u*22@.ZZ The ideas here are basically the same as
+# last time. Use an arrow key to both piggy-back off an earlier insert, and bring
+# the cursor closer to where it needs to go. This solution does a good job of
+# showing how undo handles the split edit -- the cursor went back to the
+# beginning of the 2nd half, after the Down.
+
+
+Happy New Year!
+###############
+
+# ./chall_happy_new_year.vg
+# vimgolf put 4d247aa50947c63e260000a4
+# http://vimgolf.com/challenges/4d247aa50947c63e260000a4
+
+# igal<Esc>:redi@"<CR>16@.pdjZZ For one thing, this doesn't make you deal with
+# "recording". But there's a bigger lesson here: Lesson 3: If you can write your
+# junk text in a spot that'll get deleted anyway, you don't need to undo it.
+
+Compile C
+#########
+
+# ./chall_compile_c
+# vimgolf put 4d1c6d0535b40650b800017e
+# http://vimgolf.com/challenges/4d1c6d0535b40650b800017e
+
+# 9wcf"Vp$xYk<Esc>G13@.ZZ This takes advantage of the fact that input and output
+# have the same number of lines. It also skips undo, since the junk text will get
+# overwritten anyway. But there's a new trick here: Lesson 4: If you need a d
+# command and a @. macro, piggy back it into a c command to save a stroke.
+
+Deleting folded text
+####################
+
+# ./chall_deleting_folded_text.vg
+# vimgolf put 4d1a87fcb8cb340932000290
+# http://vimgolf.com/challenges/4d1a87fcb8cb340932000290
+#
+# oaoeu<Home>zjx@.<C-U><C-@>@.ZZ This time the macro is removed with C-U, which
+# is normally problematic (moves your buffer around), but we can't end the edit
+# at that point without losing the option of C-@. Run :di after the whole insert,
+# and you'll see there's junk at the end of ". But: Lesson 5: In a recursive
+# macro, nothing after the recursive call can ever run.
+
+Reverse Simple Deletion and Generate English Alphabets
+######################################################
+
+# There are a lot of 12-stroke answers for a good reason. There's really only one
+# clear way to do it. Even if you've read all the solutions above, it's not
+# obvious how to convert the macro to @. It's impossible to escape out of insert
+# mode inside a @. macro. If you use C-V or a C-K digraph, then run :di, you'll
+# see your Esc, C-C, or C-@ get escaped by a C-V in the ". register. If you copy
+# a literal Esc elsewhere in the file and try using <C-R>" you exit insert mode.
+# If you get clever and try <C-R><C-R>" the register gets a C-V again. And in
+# this challenge, you need to enter and exit insert mode 25 times.
+# a.<BS><CR><Esc>24@.ZZ I got around that limitation by using . in my @. macro.
+# The . repeats the initial insert, thereby "embedding" a complete insert, with a
+# "virtual escape", in the ". register. BS "cancels" the . during the insert, and
+# also cancels the CR in the macro, because since you're guaranteed to be at the
+# beginning of the line, BS moves the cursor to the previous line. If CR was run
+# from the last line, the macro would fail.  Lesson 6?: I just don't know. I'm
+# still stunned that this actually works. I don't know how anything remotely
+# similar could do anything useful.  Conclusion I hope you find some applications
+# in challenges I missed. Maybe one will pop up in the future. I also hope you
+# don't find any applications in real life.  Lesson 7: Couldn't resist. There's
+# another trick I have that I've never managed to use. If you need to add a blank
+# line AND define a @. macro, try omacrohere<Esc>U
+
+# }}}
